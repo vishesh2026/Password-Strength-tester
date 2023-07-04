@@ -5,9 +5,10 @@
 }
 
 .section {
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
+  gap: 3rem;
   height: 100vh;
 }
 
@@ -33,4 +34,43 @@
 .password-status {
   /* border: 1px solid black; */
   height: 25px;
+}
+
+/* =================strength status bar */
+
+.strength-container{
+  display: grid;
+  width: 300px;
+  justify-content: center;
+}
+
+.strength-status-title{
+  padding-bottom: 10px;
+}
+
+.green {
+  background-color: green;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.red {
+  background-color: red;
+}
+
+.status-bar{
+  width: 80px;
+  height: 10px;
+  border: 0.5px solid black;
+  
+}
+
+.strength-status-full-bar {
+  display: flex;
+}
+
+.strength-status{
+  justify-self: center;
 }
