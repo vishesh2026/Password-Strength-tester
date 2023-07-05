@@ -44,8 +44,8 @@
   display: flex;
   height: fit-content;
   align-self: start;
-  height: 300px;
-  padding-bottom: 200px;
+  height: 350px;
+  padding-bottom: 100px;
 }
 
 .password-section {
@@ -59,6 +59,7 @@
   justify-content: center;
   align-content: center;
   height: 10vh;
+  text-decoration: underline;
   /* color: var(--btn-heading-clr); */
 }
 
@@ -74,8 +75,8 @@
 .input {
   width: 25rem;
   outline: none;
-  border: 1px solid black;
-  height: 25px;
+  border: 1.5px solid black;
+  height: 30px;
   padding: 5px;
   background-color: var(--secn-btn-clr);
 }
@@ -130,6 +131,8 @@
 .strength-status-title {
   padding-bottom: 10px;
   justify-self: center;
+  align-self: end;
+  padding-bottom: 0;
 }
 
 .status-bar {
@@ -157,6 +160,7 @@
 .strength-status {
   justify-self: center;
   height: 2rem;
+  align-self: flex-start;
 }
 
 /* =======================footer */

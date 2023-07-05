@@ -31,7 +31,7 @@ submitBtn.addEventListener("click", validation);
 
 function noPassword(password) {
   if (password.trim().length === 0) {
-    notificationMessage.textContent = "Please submit a password.";
+    notificationMessage.textContent = "Please enter a password.";
     console.log("password is empty");
     return true;
   } else {
@@ -109,7 +109,7 @@ function strongPassword(password) {
   ) {
     console.log("strong");
     strengthStatus.textContent = "Password is strong!";
-    notificationMessage.textContent = "Password is strong!";
+    notificationMessage.textContent = "Password is ready to be copied!";
     strengthStatusBar1.classList.remove("red");
     strengthStatusBar1.classList.remove("orange");
     strengthStatusBar2.classList.remove("orange");
