@@ -163,20 +163,63 @@
   align-self: flex-start;
 }
 
-/* =======================footer */
+/* ======================= PASSWORD GENERATOR */
 
-.footer {
+.password-generator-container {
   display: grid;
-  background-image: radial-gradient(#06b24b, #06d158, #06e961);
-  height: 120px;
-  background-color: transparent;
+  border-top: 2px solid var(--btn-clr);
+  padding: 20px;
+  justify-content: center;
+  font-size: 20px;
+  height: 280px;
+  gap: 2rem;
+  background-color: var(--secn-btn-clr);
 }
 
-.footer-title,
-.footer-rights,
-.footer-link {
+.questions-center {
   display: grid;
+  background-color: var(--secn-btn-clr);
   justify-content: center;
-  align-self: center;
-  background-color: transparent;
+  gap: 1rem;
+}
+
+.questions-center p {
+  background-color: var(--secn-btn-clr);
+}
+
+.highlight {
+  color: var(--btn-clr);
+}
+
+.tm-icon {
+  font-size: 10px;
+  align-self: start;
+}
+
+.password-generator-btn {
+  width: 6rem;
+  height: 2rem;
+  justify-self: center;
+  background-color: var(--btn-clr);
+  color: white;
+  font-size: 18px;
+}
+
+.password-generator-btn:hover {
+  background-color: var(--hightlight-btn-clr);
+}
+
+.password-generator-center {
+  justify-content: center;
+  display: grid;
+  background-color: var(--secn-btn-clr);
+  gap: 2rem;
+}
+
+.generated-password {
+  display: grid;
+  height: 2rem;
+  width: 15rem;
+  border: 1px solid black;
+  background-color: var(--secn-btn-clr);
 }
