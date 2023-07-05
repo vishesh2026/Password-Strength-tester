@@ -1,4 +1,7 @@
 import { specialCharacters } from "./specialCharacters.js";
+import { alphabetLowercase } from "./specialCharacters.js";
+import { alphabetUppercase } from "./specialCharacters.js";
+import { numbersArray } from "./specialCharacters.js";
 
 const input = document.querySelector(".input");
 const submitBtn = document.querySelector(".submit-btn");
@@ -325,6 +328,78 @@ copyBtn.addEventListener("click", () => {
     navigator.clipboard.writeText(password);
     copyBtn.textContent = "Copied!";
     copyBtn.style.color = "#04aa47";
+    copyBtn.style.border = "2px solid #04aa47";
+    console.log("copied");
+  } catch (error) {
+    console.log("unable to copy!");
+  }
+});
+
+// ================================================== PASSWORD GENERATOR
+
+const generateBtn = document.querySelector(".password-generator-btn");
+const generatedPasswordDiv = document.querySelector(".generated-password");
+
+generateBtn.addEventListener("click", () => {
+  // ==============function 1
+  function randomNumber1(array) {
+    let randomIndex = Math.floor(Math.random() * array.length);
+    return randomIndex;
+  }
+  // random array index
+  const randomNumbersCharacterIndex = randomNumber1(numbersArray);
+  const randomSpecialCharacterIndex = randomNumber1(specialCharacters);
+  const randomLowLetterCharacterIndex = randomNumber1(alphabetLowercase);
+  const randomUpLetterCharacterIndex = randomNumber1(alphabetUppercase);
+
+  // random character find
+  const randomNumbersCharacter1 = numbersArray[randomNumbersCharacterIndex];
+  const randomSpecialCharacter1 =
+    specialCharacters[randomSpecialCharacterIndex];
+  const randomLowLetterCharacter1 =
+    alphabetLowercase[randomLowLetterCharacterIndex];
+  const randomUpLetterCharacter1 =
+    alphabetUppercase[randomUpLetterCharacterIndex];
+
+  // ==============function 2
+  function randomNumber2(array) {
+    let randomIndex = Math.floor(Math.random() * array.length);
+    return randomIndex;
+  }
+  // random array index
+  const randomNumbersCharacterIndex2 = randomNumber2(numbersArray);
+  const randomSpecialCharacterIndex2 = randomNumber2(specialCharacters);
+  const randomLowLetterCharacterIndex2 = randomNumber2(alphabetLowercase);
+  const randomUpLetterCharacterIndex2 = randomNumber2(alphabetUppercase);
+
+  // random character find
+  const randomNumbersCharacter2 = numbersArray[randomNumbersCharacterIndex2];
+  const randomSpecialCharacter2 =
+    specialCharacters[randomSpecialCharacterIndex2];
+  const randomLowLetterCharacter2 =
+    alphabetLowercase[randomLowLetterCharacterIndex2];
+  const randomUpLetterCharacter2 =
+    alphabetUppercase[randomUpLetterCharacterIndex2];
+
+  generatedPasswordDiv.textContent = `${randomNumbersCharacter1}${randomLowLetterCharacter1}${randomSpecialCharacter1}${randomUpLetterCharacter1}${randomNumbersCharacter2}${randomSpecialCharacter2}${randomLowLetterCharacter2}${randomUpLetterCharacter2}`;
+});
+
+// ================================================== COPY BUTTON
+
+const copyGenBtn = document.querySelector(".copy-to-clipboard-btn-2");
+
+copyGenBtn.addEventListener("click", () => {
+  try {
+    const generatedPassword = generatedPasswordDiv.textContent.trim();
+    navigator.clipboard.writeText(generatedPassword);
+    copyGenBtn.textContent = "Copied!";
+    copyGenBtn.style.color = "#04aa47";
+    copyGenBtn.style.border = "2px solid #04aa47";
+    if (generatedPasswordDiv.textContent === "") {
+      copyGenBtn.textContent = "Nothing to copy?";
+      copyGenBtn.style.color = "red";
+      copyGenBtn.style.border = "2px solid red";
+    }
     console.log("copied");
   } catch (error) {
     console.log("unable to copy!");

@@ -31,7 +31,7 @@
 .nav {
   display: grid;
   justify-content: center;
-  height: 30vh;
+  height: 25vh;
   font-style: oblique;
   font-size: 50px;
   background-image: radial-gradient(#06b24b, #06d158, #06e961);
@@ -45,7 +45,7 @@
   height: fit-content;
   align-self: start;
   height: 350px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 }
 
 .password-section {
@@ -167,11 +167,11 @@
 
 .password-generator-container {
   display: grid;
-  border-top: 2px solid var(--btn-clr);
+  border-top: 5px solid var(--btn-clr);
   padding: 20px;
   justify-content: center;
   font-size: 20px;
-  height: 280px;
+  height: 325px;
   gap: 2rem;
   background-color: var(--secn-btn-clr);
 }
@@ -196,6 +196,12 @@
   align-self: start;
 }
 
+.password-generator-center {
+  justify-content: center;
+  display: grid;
+  background-color: var(--secn-btn-clr);
+  gap: 1rem;
+}
 .password-generator-btn {
   width: 6rem;
   height: 2rem;
@@ -204,22 +210,31 @@
   color: white;
   font-size: 18px;
 }
-
 .password-generator-btn:hover {
   background-color: var(--hightlight-btn-clr);
 }
 
-.password-generator-center {
-  justify-content: center;
-  display: grid;
-  background-color: var(--secn-btn-clr);
-  gap: 2rem;
-}
-
 .generated-password {
   display: grid;
-  height: 2rem;
+  height: 2.5rem;
   width: 15rem;
   border: 1px solid black;
   background-color: var(--secn-btn-clr);
+  padding: 5.5px;
+  justify-content: center;
+}
+
+.copy-to-clipboard-btn-2 {
+  display: grid;
+  width: 7rem;
+  height: 3.5rem;
+  justify-self: center;
+  align-items: center;
+  font-size: 15px;
+  border: 1px solid black;
+}
+
+.copy-to-clipboard-btn-2:hover {
+  border: 2px solid #04aa47;
+  cursor: pointer;
 }
