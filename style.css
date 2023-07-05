@@ -2,19 +2,71 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: var(--text-clr);
+  background-color: var(--background-clr);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.section {
+:root {
+  --background-clr: #f9fff0;
+  --btn-clr: #04aa47;
+  --secn-btn-clr: #dcfeea;
+  /* --heading-clr: #55dde0; */
+  --hightlight-btn-clr: #06da5a;
+}
+
+
+.tall-guy-presents, .app-main-title{
+  background-color: transparent;
+  display: grid;
+}
+
+.tall-guy-presents{
+  color: black;
+  font-size: 18px;
+  justify-content: center;
+  align-items: end;
+}
+
+.nav {
+  display: grid;
+  justify-content: center;
+  height: 30vh;
+  font-style: oblique;
+  font-size: 50px;
+  background-image: radial-gradient(#06b24b, #06d158, #06e961);
+  color: rgb(255, 255, 255);
+}
+
+
+/* ======================input center */
+
+.password-input-center{
   display: flex;
+}
+
+.password-section {
+  display: grid;
+  justify-content: center;
+  gap: 3rem;
+  height: 20vh;
+}
+
+.input-subtitle {
+  display: grid;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
-  height: 100vh;
+  height: 10vh;
+  /* color: var(--btn-heading-clr); */
 }
+
+/* ================================== password input container */
+
 
 .password-input-container {
   display: grid;
   justify-content: center;
+  align-items: center;
   gap: 5px;
 }
 
@@ -24,32 +76,69 @@
   border: 1px solid black;
   height: 25px;
   padding: 5px;
+  background-color: var(--secn-btn-clr);
 }
 
 .submit-btn {
-  width: 3rem;
+  width: 6rem;
+  height: 2rem;
+  justify-self: center;
+  background-color: var(--btn-clr);
+  color: white;
+  font-size: 18px;
+}
+
+.submit-btn:hover {
+  background-color: var(--hightlight-btn-clr);
+}
+
+.error-message {
+  /* border: 1px solid black; */
+  height: 25px;
   justify-self: center;
 }
 
-.password-status {
-  /* border: 1px solid black; */
-  height: 25px;
+.copy-to-clipboard-btn {
+  display: none;
+  width: 6rem;
+  height: 3rem;
+  justify-self: center;
+  align-items: center;
+  font-size: 15px;
+}
+
+.copy-to-clipboard-btn:hover {
+  border: 2px solid #04aa47;
+  cursor: pointer;
+}
+
+.show {
+  display: grid;
 }
 
 /* =================strength status bar */
 
-.strength-container{
+.strength-container {
   display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
   width: 300px;
   justify-content: center;
+  align-items: center;
 }
 
-.strength-status-title{
+.strength-status-title {
   padding-bottom: 10px;
+  justify-self: center;
 }
 
+.status-bar {
+  background-color: var(--secn-btn-clr);
+  width: 80px;
+  height: 10px;
+  border: 0.5px solid black;
+}
 .green {
-  background-color: green;
+  background-color: #04aa47;
 }
 
 .orange {
@@ -60,17 +149,11 @@
   background-color: red;
 }
 
-.status-bar{
-  width: 80px;
-  height: 10px;
-  border: 0.5px solid black;
-  
-}
-
 .strength-status-full-bar {
   display: flex;
 }
 
-.strength-status{
+.strength-status {
   justify-self: center;
+  height: 2rem;
 }
