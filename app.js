@@ -22,21 +22,27 @@ function validation() {
   strongPassword(password);
   goodPassword(password);
   weakPassword(password);
+  noPassword(password);
 }
 
 submitBtn.addEventListener("click", validation);
 
 // ======================================== CONDITION STATEMENT FUNCTIONS
 
+function noPassword(password) {
+  if (password.trim().length === 0) {
+    notificationMessage.textContent = "Please submit a password.";
+    console.log("password is empty");
+    return true;
+  } else {
+    return;
+  }
+}
+
 // character length is correct
 function characterLength(password) {
   if (password.length > 7) {
     console.log("password is long enough");
-    return true;
-  } else if (password.trim().length === 0) {
-    notificationMessage.textContent = "Please submit a password.";
-    console.log("password is empty");
-
     return true;
   } else {
     notificationMessage.textContent =
@@ -206,6 +212,7 @@ function goodPassword(password) {
 // weak password
 function weakPassword(password) {
   if (
+    !noPassword(password) &&
     !characterLength(password) &&
     !containsSpecialCharacters(password) &&
     !containsCapitalLetter(password) &&
@@ -221,7 +228,8 @@ function weakPassword(password) {
     strengthStatusBar3.classList.remove("green");
     return true;
   } else if (
-    characterLength(password) &&
+    noPassword(password) &&
+    !characterLength(password) &&
     !containsSpecialCharacters(password) &&
     !containsCapitalLetter(password) &&
     !containsNumbers(password)
@@ -241,7 +249,7 @@ function weakPassword(password) {
     (!containsCapitalLetter(password) || !containsNumbers(password))
   ) {
     console.log("weak3");
-    strengthStatus.textContent = "Password is good";
+    strengthStatus.textContent = "Password is weak";
     strengthStatusBar1.classList.add("red");
     strengthStatusBar1.classList.remove("orange");
     strengthStatusBar2.classList.remove("orange");
@@ -256,7 +264,7 @@ function weakPassword(password) {
     containsNumbers(password)
   ) {
     console.log("weak4");
-    strengthStatus.textContent = "Password is good";
+    strengthStatus.textContent = "Password is weak";
     strengthStatusBar1.classList.add("red");
     strengthStatusBar1.classList.remove("orange");
     strengthStatusBar2.classList.remove("orange");
@@ -285,6 +293,23 @@ function weakPassword(password) {
     strengthStatusBar2.classList.remove("green");
     strengthStatusBar3.classList.remove("green");
     return true;
+  }
+  if (
+    !noPassword(password) &&
+    characterLength(password) &&
+    !containsSpecialCharacters(password) &&
+    !containsCapitalLetter(password) &&
+    !containsNumbers(password)
+  ) {
+    console.log("weak6");
+    strengthStatus.textContent = "Password is weak";
+    strengthStatusBar1.classList.add("red");
+    strengthStatusBar1.classList.remove("organge");
+    strengthStatusBar2.classList.remove("organge");
+    strengthStatusBar1.classList.remove("green");
+    strengthStatusBar2.classList.remove("green");
+    strengthStatusBar3.classList.remove("green");
+    return true;
   } else {
     console.log("weak code needs work");
     strengthStatusBar1.classList.remove("red");
@@ -295,13 +320,13 @@ function weakPassword(password) {
 // ================================================== COPY BUTTON
 
 copyBtn.addEventListener("click", () => {
-  
   try {
     const password = input.value.trim();
     navigator.clipboard.writeText(password);
-    notificationMessage.textContent = 'PASSWORD COPIED!'
-    console.log('copied');
+    copyBtn.textContent = "Copied!";
+    copyBtn.style.color = "#04aa47";
+    console.log("copied");
   } catch (error) {
-    console.log('unable to copy!');
+    console.log("unable to copy!");
   }
 });

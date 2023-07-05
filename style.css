@@ -15,13 +15,13 @@
   --hightlight-btn-clr: #06da5a;
 }
 
-
-.tall-guy-presents, .app-main-title{
+.tall-guy-presents,
+.app-main-title {
   background-color: transparent;
   display: grid;
 }
 
-.tall-guy-presents{
+.tall-guy-presents {
   color: black;
   font-size: 18px;
   justify-content: center;
@@ -38,30 +38,31 @@
   color: rgb(255, 255, 255);
 }
 
-
 /* ======================input center */
 
-.password-input-center{
+.password-input-center {
   display: flex;
+  height: fit-content;
+  align-self: start;
+  height: 300px;
+  padding-bottom: 200px;
 }
 
 .password-section {
   display: grid;
   justify-content: center;
-  gap: 3rem;
-  height: 20vh;
+  gap: 1rem;
 }
 
 .input-subtitle {
   display: grid;
   justify-content: center;
-  align-items: center;
+  align-content: center;
   height: 10vh;
   /* color: var(--btn-heading-clr); */
 }
 
 /* ================================== password input container */
-
 
 .password-input-container {
   display: grid;
@@ -156,4 +157,22 @@
 .strength-status {
   justify-self: center;
   height: 2rem;
+}
+
+/* =======================footer */
+
+.footer {
+  display: grid;
+  background-image: radial-gradient(#06b24b, #06d158, #06e961);
+  height: 120px;
+  background-color: transparent;
+}
+
+.footer-title,
+.footer-rights,
+.footer-link {
+  display: grid;
+  justify-content: center;
+  align-self: center;
+  background-color: transparent;
 }
