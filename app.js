@@ -105,6 +105,7 @@ function containsNumbers(password) {
 // strong password
 function strongPassword(password) {
   if (
+    // all requirements met
     characterLength(password) &&
     containsSpecialCharacters(password) &&
     containsCapitalLetter(password) &&
@@ -124,7 +125,7 @@ function strongPassword(password) {
 
     return true;
   } else {
-    console.log("strong code needs work");
+    console.log("NOT strong");
     return false;
   }
 }
@@ -132,6 +133,7 @@ function strongPassword(password) {
 // good password
 function goodPassword(password) {
   if (
+    // length no correct but have all other characters
     !characterLength(password) &&
     containsSpecialCharacters(password) &&
     containsCapitalLetter(password) &&
@@ -147,6 +149,7 @@ function goodPassword(password) {
     strengthStatusBar3.classList.remove("green");
     return true;
   } else if (
+    // length not correct but
     !characterLength(password) &&
     ((containsSpecialCharacters(password) && containsCapitalLetter(password)) ||
       containsNumbers(password))
@@ -162,13 +165,9 @@ function goodPassword(password) {
     return true;
   } else if (
     characterLength(password) &&
-    ((!containsSpecialCharacters(password) &&
-      containsCapitalLetter(password)) ||
-      (containsSpecialCharacters(password) &&
-        !containsCapitalLetter(password)) ||
-      (containsSpecialCharacters(password) &&
-        containsNumbers(password) &&
-        !containsCapitalLetter(password)) ||
+    ((containsSpecialCharacters(password) &&
+      containsNumbers(password) &&
+      !containsCapitalLetter(password)) ||
       (containsCapitalLetter(password) &&
         containsNumbers(password) &&
         !containsSpecialCharacters(password)) ||
@@ -207,7 +206,7 @@ function goodPassword(password) {
     strengthStatusBar3.classList.remove("green");
     return true;
   } else {
-    console.log("good code needs work");
+    console.log("NOT good");
     return false;
   }
 }
@@ -215,6 +214,7 @@ function goodPassword(password) {
 // weak password
 function weakPassword(password) {
   if (
+    // nothing met
     !noPassword(password) &&
     !characterLength(password) &&
     !containsSpecialCharacters(password) &&
@@ -231,6 +231,7 @@ function weakPassword(password) {
     strengthStatusBar3.classList.remove("green");
     return true;
   } else if (
+    // empty input
     noPassword(password) &&
     !characterLength(password) &&
     !containsSpecialCharacters(password) &&
@@ -247,6 +248,7 @@ function weakPassword(password) {
     strengthStatusBar3.classList.remove("green");
     return true;
   } else if (
+    // not long enough but includes special char and one of the other at least
     !characterLength(password) &&
     containsSpecialCharacters(password) &&
     (!containsCapitalLetter(password) || !containsNumbers(password))
@@ -261,6 +263,7 @@ function weakPassword(password) {
     strengthStatusBar3.classList.remove("green");
     return true;
   } else if (
+    // only number added
     !characterLength(password) &&
     !containsSpecialCharacters(password) &&
     !containsCapitalLetter(password) &&
@@ -313,8 +316,29 @@ function weakPassword(password) {
     strengthStatusBar2.classList.remove("green");
     strengthStatusBar3.classList.remove("green");
     return true;
+  } else if (
+    characterLength(password) &&
+    ((!containsSpecialCharacters(password) &&
+      !containsNumbers(password) &&
+      containsCapitalLetter(password)) ||
+      (!containsCapitalLetter(password) &&
+        containsNumbers(password) &&
+        !containsSpecialCharacters(password)) ||
+      (!containsCapitalLetter(password) &&
+        containsSpecialCharacters(password) &&
+        !containsNumbers(password)))
+  ) {
+    console.log("weak7");
+    strengthStatus.textContent = "Password is weak";
+    strengthStatusBar1.classList.add("red");
+    strengthStatusBar1.classList.remove("orange");
+    strengthStatusBar2.classList.remove("orange");
+    strengthStatusBar1.classList.remove("green");
+    strengthStatusBar2.classList.remove("green");
+    strengthStatusBar3.classList.remove("green");
+    return true;
   } else {
-    console.log("weak code needs work");
+    console.log("NOT weak");
     strengthStatusBar1.classList.remove("red");
     return false;
   }
