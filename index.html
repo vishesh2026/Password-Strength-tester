@@ -35,14 +35,32 @@
             id="password"
             placeholder="Enter your password here..."
           />
-          <p class="error-message"></p>
+          <div class="error-message">
+            <div class="characters">
+              <i id="character-check" class="fa-regular fa-square"></i>
+              <p>Password is at least 8 characters long</p>
+            </div>
+            <div class="special">
+              <i class="fa-regular fa-square"></i>
+              <p>Password contains a special character</p>
+            </div>
+            <div class="capital">
+              <i class="fa-regular fa-square"></i>
+              <p>Password contains a capital letter</p>
+            </div>
+            <div class="numbers">
+              <i class="fa-regular fa-square"></i>
+              <p>Password contains a number</p>
+            </div>
+
+          </div>
           <button class="submit-btn" type="submit" action="submit">Test</button>
           <button class="copy-to-clipboard-btn">
             Click to copy:<i class="copy-icon fa-solid fa-copy"></i>
           </button>
         </article>
         <!-- ======= password strength status bar ======= -->
-        <section class="strength-container">
+        <article class="strength-container">
           <h3 class="strength-status-title">Password strength status:</h3>
           <article class="strength-status-full-bar">
             <span class="strength-status-bar-1 status-bar"></span>
@@ -50,7 +68,7 @@
             <span class="strength-status-bar-3 status-bar"></span>
           </article>
           <p class="strength-status"></p>
-        </section>
+        </article>
       </div>
     </section>
 

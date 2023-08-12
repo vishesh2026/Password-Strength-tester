@@ -38,13 +38,29 @@
   color: rgb(255, 255, 255);
 }
 
+@media screen and (max-width: 460px) {
+  .app-main-title {
+    font-size: 30px;
+  }
+
+  .tall-guy-presents {
+    font-size: 16px;
+  }
+
+  .nav {
+    width: 100%;
+    height: 12vh;
+  }
+}
+
 /* ======================input center */
 
 .password-input-center {
   display: flex;
   height: fit-content;
   align-self: start;
-  height: 350px;
+  height: 330px;
+  gap: 30px;
   padding-bottom: 30px;
 }
 
@@ -58,14 +74,15 @@
   display: grid;
   justify-content: center;
   align-content: center;
-  height: 10vh;
+  /* height: 10vh; */
   text-decoration: underline;
-  /* color: var(--btn-heading-clr); */
+  color: var(--btn-heading-clr);
 }
 
 /* ================================== password input container */
 
 .password-input-container {
+  grid-template-rows: 1fr 1fr 2fr 1fr;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -95,9 +112,17 @@
 }
 
 .error-message {
-  /* border: 1px solid black; */
-  height: 25px;
-  justify-self: center;
+  justify-self: start;
+  align-self: center;
+}
+
+.characters,
+.numbers,
+.special,
+.capital {
+  display: flex;
+  gap: 4px;
+  align-items: center;
 }
 
 .copy-to-clipboard-btn {
@@ -123,7 +148,7 @@
 .strength-container {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  width: 300px;
+  /* width: 300px; */
   justify-content: center;
   align-items: center;
 }
@@ -163,6 +188,141 @@
   align-self: flex-start;
 }
 
+@media screen and (max-width: 460px) {
+  body {
+    display: grid;
+  }
+
+  .password-section {
+    width: 100vw;
+  }
+  .password-input-center {
+    display: grid;
+    width: 100vw;
+    padding: 20px;
+    height: fit-content;
+    gap: 0px;
+  }
+  .password-input-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr auto 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input-subtitle {
+    height: 5vh;
+    font-size: 18px;
+  }
+
+  .input {
+    width: 100%;
+    outline: none;
+    border: 1.5px solid black;
+    height: 30px;
+    padding: 5px;
+    background-color: var(--secn-btn-clr);
+  }
+
+  .submit-btn {
+    display: grid;
+    width: 6rem;
+    height: 2rem;
+    justify-self: center;
+    background-color: var(--btn-clr);
+    color: white;
+    font-size: 15px;
+    align-content: center;
+  }
+
+  .error-message {
+    font-size: 14px;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .characters,
+  .numbers,
+  .special,
+  .capital {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .copy-to-clipboard-btn {
+    display: none;
+    width: 6rem;
+    height: 3rem;
+    justify-self: center;
+    align-items: center;
+    font-size: 15px;
+  }
+
+  .copy-to-clipboard-btn:hover {
+    border: 2px solid #04aa47;
+    cursor: pointer;
+  }
+
+  /* =================strength status bar */
+
+  .strength-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .strength-status-title {
+    padding-bottom: 10px;
+    justify-self: center;
+    align-self: end;
+    padding-bottom: 0;
+    font-size: 18px;
+  }
+
+  .status-bar {
+    background-color: var(--secn-btn-clr);
+    height: 10px;
+    width: 100%;
+    border: 0.5px solid black;
+  }
+  .strength-status-full-bar {
+    display: flex;
+  }
+
+  .strength-status {
+    display: grid;
+    justify-content: center;
+  }
+
+  .show {
+    display: grid;
+  }
+
+  .green {
+    background-color: #04aa47;
+  }
+
+  .orange {
+    background-color: orange;
+  }
+
+  .red {
+    background-color: red;
+  }
+
+  .strength-status-full-bar {
+    display: flex;
+  }
+
+  .strength-status {
+    justify-self: center;
+    height: 2rem;
+    align-self: flex-start;
+  }
+}
+
 /* ======================= PASSWORD GENERATOR */
 
 .password-generator-container {
@@ -171,7 +331,7 @@
   padding: 20px;
   justify-content: center;
   font-size: 20px;
-  height: 325px;
+  height: 365px;
   gap: 2rem;
   background-color: var(--secn-btn-clr);
 }
@@ -240,4 +400,18 @@
 .copy-to-clipboard-btn-2:hover {
   border: 2px solid #04aa47;
   cursor: pointer;
+}
+
+@media screen and (max-width: 460px) {
+  .questions-center p,
+  .questions-center p strong,
+  .questions-center p strong {
+    font-size: 18px;
+  }
+
+  .copy-to-clipboard-btn-2 {
+    display: grid;
+    width: 6rem;
+    height: 45px;
+  }
 }

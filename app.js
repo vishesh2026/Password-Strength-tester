@@ -16,11 +16,9 @@ const copyBtn = document.querySelector(".copy-to-clipboard-btn");
 function validation() {
   const password = input.value.trim();
 
-  // emptyInput(password);
   characterLength(password);
-  containsSpecialCharacters(password);
-  // !notThatWord(password) &
   containsCapitalLetter(password);
+  containsSpecialCharacters(password);
   containsNumbers(password);
   strongPassword(password);
   goodPassword(password);
@@ -46,12 +44,14 @@ function noPassword(password) {
 function characterLength(password) {
   if (password.length > 7) {
     console.log("password is long enough");
+    const charCheck = document.querySelector(".characters");
+    charCheck.innerHTML = `<i class="fa-solid fa-check"></i><p>Password is at least 8 characters long</p>`;
     return true;
   } else {
-    notificationMessage.textContent =
-      "Password should be at least 8 characters long.";
+    // notificationMessage.textContent =
+    //   "Password should be at least 8 characters long.";
     console.log("password is too short");
-    return;
+    return false;
   }
 }
 
@@ -59,14 +59,16 @@ function characterLength(password) {
 function containsSpecialCharacters(password) {
   if (specialCharacters.some((char) => password.includes(char))) {
     console.log("contains special charac");
+    const specCheck = document.querySelector(".special");
+    specCheck.innerHTML = `<i class="fa-solid fa-check"></i><p>Password contains a special character</p>`;
     return true;
   } else if (
     password.length > 7 &&
     specialCharacters.some((char) => !password.includes(char))
   ) {
     console.log("NO speci char");
-    notificationMessage.textContent =
-      "Password must include special characters like '@' or '$'.";
+    // notificationMessage.textContent =
+    //   "Password must include special characters like '@' or '$'.";
     return false;
   }
 }
@@ -77,10 +79,12 @@ function containsCapitalLetter(password) {
   const capitalLetterCheck = password.match(/[A-Z]/g, "");
   if (capitalLetterCheck) {
     console.log("capital letter is used!");
+    const capCheck = document.querySelector(".capital");
+    capCheck.innerHTML = `<i class="fa-solid fa-check"></i><p>Password contains a capital letter</p>`;
     return true;
   } else if (password.length > 7 && !capitalLetterCheck) {
-    notificationMessage.textContent =
-      "Password should contain at least one capital letter.";
+    // notificationMessage.textContent =
+    //   "Password should contain at least one capital letter.";
     console.log("password doesnt have a capital letter");
     return false;
   }
@@ -92,10 +96,12 @@ function containsNumbers(password) {
   const numberCheck = password.match(/[1-9]/g, "");
   if (numberCheck) {
     console.log("includes numbers");
+    const numCheck = document.querySelector(".numbers");
+    numCheck.innerHTML = `<i class="fa-solid fa-check"></i><p>Password contains a number</p>`;
     return true;
   } else if (password.length > 7 && !numberCheck) {
-    notificationMessage.textContent =
-      "Password should contain at least one number";
+    // notificationMessage.textContent =
+    //   "Password should contain at least one number";
     return false;
   }
 }
@@ -105,7 +111,6 @@ function containsNumbers(password) {
 // strong password
 function strongPassword(password) {
   if (
-    // all requirements met
     characterLength(password) &&
     containsSpecialCharacters(password) &&
     containsCapitalLetter(password) &&
@@ -132,38 +137,39 @@ function strongPassword(password) {
 
 // good password
 function goodPassword(password) {
+  // if (
+  //   // length no correct but have all other characters
+  //   !characterLength(password) &&
+  //   containsSpecialCharacters(password) &&
+  //   containsCapitalLetter(password) &&
+  //   containsNumbers(password)
+  // ) {
+  //   console.log("good1");
+  //   strengthStatus.textContent = "Password is good";
+  //   strengthStatusBar1.classList.remove("red");
+  //   strengthStatusBar1.classList.add("orange");
+  //   strengthStatusBar2.classList.add("orange");
+  //   strengthStatusBar1.classList.remove("green");
+  //   strengthStatusBar2.classList.remove("green");
+  //   strengthStatusBar3.classList.remove("green");
+  //   return true;
+  // }
+  // else if (
+  //   !characterLength(password) &&
+  //   ((containsSpecialCharacters(password) && containsCapitalLetter(password)) ||
+  //     containsNumbers(password))
+  // ) {
+  //   console.log("good2");
+  //   strengthStatus.textContent = "Password is good";
+  //   strengthStatusBar1.classList.remove("red");
+  //   strengthStatusBar1.classList.add("orange");
+  //   strengthStatusBar2.classList.add("orange");
+  //   strengthStatusBar1.classList.remove("green");
+  //   strengthStatusBar2.classList.remove("green");
+  //   strengthStatusBar3.classList.remove("green");
+  //   return true;
+  // }
   if (
-    // length no correct but have all other characters
-    !characterLength(password) &&
-    containsSpecialCharacters(password) &&
-    containsCapitalLetter(password) &&
-    containsNumbers(password)
-  ) {
-    console.log("good1");
-    strengthStatus.textContent = "Password is good";
-    strengthStatusBar1.classList.remove("red");
-    strengthStatusBar1.classList.add("orange");
-    strengthStatusBar2.classList.add("orange");
-    strengthStatusBar1.classList.remove("green");
-    strengthStatusBar2.classList.remove("green");
-    strengthStatusBar3.classList.remove("green");
-    return true;
-  } else if (
-    // length not correct but
-    !characterLength(password) &&
-    ((containsSpecialCharacters(password) && containsCapitalLetter(password)) ||
-      containsNumbers(password))
-  ) {
-    console.log("good2");
-    strengthStatus.textContent = "Password is good";
-    strengthStatusBar1.classList.remove("red");
-    strengthStatusBar1.classList.add("orange");
-    strengthStatusBar2.classList.add("orange");
-    strengthStatusBar1.classList.remove("green");
-    strengthStatusBar2.classList.remove("green");
-    strengthStatusBar3.classList.remove("green");
-    return true;
-  } else if (
     characterLength(password) &&
     ((containsSpecialCharacters(password) &&
       containsNumbers(password) &&
@@ -247,22 +253,23 @@ function weakPassword(password) {
     strengthStatusBar2.classList.remove("green");
     strengthStatusBar3.classList.remove("green");
     return true;
-  } else if (
-    // not long enough but includes special char and one of the other at least
-    !characterLength(password) &&
-    containsSpecialCharacters(password) &&
-    (!containsCapitalLetter(password) || !containsNumbers(password))
-  ) {
-    console.log("weak3");
-    strengthStatus.textContent = "Password is weak";
-    strengthStatusBar1.classList.add("red");
-    strengthStatusBar1.classList.remove("orange");
-    strengthStatusBar2.classList.remove("orange");
-    strengthStatusBar1.classList.remove("green");
-    strengthStatusBar2.classList.remove("green");
-    strengthStatusBar3.classList.remove("green");
-    return true;
-  } else if (
+  }
+  // else if (
+  //   !characterLength(password) &&
+  //   containsSpecialCharacters(password) &&
+  //   (!containsCapitalLetter(password) || !containsNumbers(password))
+  // ) {
+  //   console.log("weak3");
+  //   strengthStatus.textContent = "Password is weak";
+  //   strengthStatusBar1.classList.add("red");
+  //   strengthStatusBar1.classList.remove("orange");
+  //   strengthStatusBar2.classList.remove("orange");
+  //   strengthStatusBar1.classList.remove("green");
+  //   strengthStatusBar2.classList.remove("green");
+  //   strengthStatusBar3.classList.remove("green");
+  //   return true;
+  // }
+  else if (
     // only number added
     !characterLength(password) &&
     !containsSpecialCharacters(password) &&
