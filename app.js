@@ -6,6 +6,7 @@ import { numbersArray } from "./specialCharacters.js";
 const input = document.querySelector(".input");
 const submitBtn = document.querySelector(".submit-btn");
 const notificationMessage = document.querySelector(".error-message");
+const notificationMessageTwo = document.querySelector(".error-message-two");
 const strengthStatusBar1 = document.querySelector(".strength-status-bar-1");
 const strengthStatusBar2 = document.querySelector(".strength-status-bar-2");
 const strengthStatusBar3 = document.querySelector(".strength-status-bar-3");
@@ -32,7 +33,7 @@ submitBtn.addEventListener("click", validation);
 
 function noPassword(password) {
   if (password.trim().length === 0) {
-    notificationMessage.textContent = "Please enter a password.";
+    notificationMessageTwo.textContent = "Please enter a password.";
     console.log("password is empty");
     return true;
   } else {
@@ -46,6 +47,7 @@ function characterLength(password) {
     console.log("password is long enough");
     const charCheck = document.querySelector(".characters");
     charCheck.innerHTML = `<i class="fa-solid fa-check"></i><p>Password is at least 8 characters long</p>`;
+    notificationMessageTwo.remove();
     return true;
   } else {
     // notificationMessage.textContent =
@@ -61,6 +63,7 @@ function containsSpecialCharacters(password) {
     console.log("contains special charac");
     const specCheck = document.querySelector(".special");
     specCheck.innerHTML = `<i class="fa-solid fa-check"></i><p>Password contains a special character</p>`;
+    notificationMessageTwo.remove();
     return true;
   } else if (
     password.length > 7 &&
@@ -81,6 +84,7 @@ function containsCapitalLetter(password) {
     console.log("capital letter is used!");
     const capCheck = document.querySelector(".capital");
     capCheck.innerHTML = `<i class="fa-solid fa-check"></i><p>Password contains a capital letter</p>`;
+    notificationMessageTwo.remove();
     return true;
   } else if (password.length > 7 && !capitalLetterCheck) {
     // notificationMessage.textContent =
@@ -98,6 +102,7 @@ function containsNumbers(password) {
     console.log("includes numbers");
     const numCheck = document.querySelector(".numbers");
     numCheck.innerHTML = `<i class="fa-solid fa-check"></i><p>Password contains a number</p>`;
+    notificationMessageTwo.remove();
     return true;
   } else if (password.length > 7 && !numberCheck) {
     // notificationMessage.textContent =
