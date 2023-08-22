@@ -68,9 +68,13 @@
 
 /* ======================input center */
 
+.password-input-container{
+  /* height: 70vh; */
+}
+
 .password-input-center {
   display: flex;
-  height: fit-content;
+  /* height: 70vh; */
   align-self: start;
   /* height: 330px; */
   gap: 30px;
@@ -80,7 +84,7 @@
 .password-section {
   display: grid;
   justify-content: center;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 
 .input-subtitle {
@@ -131,11 +135,14 @@
   /* height: 1rem; */
 }
 
-.error-message-two {
+.error-message-two, .success-message {
   display: grid;
-  color: blue;
-  background-color: red;
   height: 1rem;
+  
+}
+
+.message-item{
+  /* background-color: red; */
 }
 
 .characters,
@@ -211,20 +218,21 @@
 }
 
 @media screen and (max-width: 560px) {
+  
+  
   .password-input-center {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 0 20px;
-    /* height: 70vh; */
-    gap: 0px;
+    padding: 20px 20px;
   }
   .password-input-container {
     display: grid;
     grid-template-rows: auto auto auto 1fr;
-    gap: 20px;
+    gap: 15px;
     align-items: center;
     justify-content: space-between;
+    /* height: 60vh; */
   }
 
   .input-subtitle {
