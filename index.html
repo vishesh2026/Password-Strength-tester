@@ -23,11 +23,18 @@
     </nav>
 
     <div class="profile">
-      <!-- <img src="./images/20221230_181633_0001.png" alt="profile" class="profile-img">
-      <div class="navbar">
-        <li><a href="#" id="home">Home</a></li>
-        <li><a href="#" id="tester">Tester</a></li>
-      </div> -->
+      <div class="profile-image-div">
+        <img
+          src="./images/20221230_181633_0001.png"
+          alt="profile"
+          class="profile-img"
+        />
+      </div>
+      <div class="navlinks">
+        <li><a href="#" class="nav-link" id="tester">Tester</a></li>
+        <li><a href="#" class="nav-link" id="generator">Generator</a></li>
+        <li><a href="#" class="nav-link" id="profile">Profile</a></li>
+      </div>
     </div>
     <section class="password-section">
       <div class="password-input-center">
@@ -61,7 +68,6 @@
               <i class="fa-regular fa-square"></i>
               <p>Password contains a number</p>
             </div>
-
           </div>
           <button class="submit-btn" type="submit" action="submit">Test</button>
           <button class="copy-to-clipboard-btn">
@@ -81,7 +87,7 @@
       </div>
     </section>
 
-    <section class="password-generator-section">
+    <section class="password-generator-main-section">
       <div class="password-generator-container">
         <div class="questions-center">
           <p>Having trouble coming up with a strong password?</p>
@@ -91,14 +97,24 @@
             <i class="tm-icon fa-solid fa-trademark"></i> password below:
           </p>
         </div>
-        <!-- generator -->
-        <div class="password-generator-center">
-          <button class="password-generator-btn">Generate</button>
-          <p class="generated-password"></p>
-          <button class="copy-to-clipboard-btn-2">Click to copy:<i class="copy-icon fa-solid fa-copy"></i></button>
-        </div>
+      
+         <!-- ======================= generator =====================-->
+         <section class="password-generator-section" >
+           <div class="password-generator-center">
+             <button class="password-generator-btn">Generate</button>
+             <p class="generated-password"></p>
+             <button class="copy-to-clipboard-btn-2">
+               Click to copy:<i class="copy-icon fa-solid fa-copy"></i>
+             </button>
+           </div>
+         </section>
       </div>
     </section>
+<!-- ======================= profile =====================-->
+<section class="profile-section">
+<h1>this will be the profile section</h1>
+
+</section>
   </body>
   <script type="module" src="app.js"></script>
 </html>

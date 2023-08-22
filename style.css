@@ -52,25 +52,72 @@
     height: 12vh;
     padding-top: 5px;
   }
-
-  .profile {
-    display: grid;
-    justify-content: right;
-  }
-
-  .profile-img {
-    display: grid;
-    justify-content: right;
-    height: 50px;
-    border-radius: 50%;
-  }
 }
 
-/* ======================input center */
+/* ======================== navigation center */
 
-.password-input-container {
-  /* height: 70vh; */
+/* small screen */
+.profile {
+  display: flex;
+  /* justify-content: right; */
+  padding: 1rem 1rem 0rem 1rem;
 }
+
+.profile-image-div {
+  display: grid;
+  border-bottom: 2px solid var(--btn-clr);
+  padding: 5px;
+}
+
+.profile-img {
+  display: grid;
+  justify-content: right;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.navlinks {
+  display: flex;
+  justify-content: space-evenly;
+  width: 0;
+  overflow: hidden;
+  align-items: center;
+  border-bottom: 2px solid var(--btn-clr);
+}
+
+.show-nav {
+  width: 100%;
+  transition: 500ms;
+}
+
+.navlinks li {
+  display: flex;
+  list-style: none;
+  width: 70px;
+  justify-content: center;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #04aa47;
+  transition: 300ms;
+}
+
+/* ====================== input center */
+
+.password-section {
+  display: none;
+  /* display: grid; */
+  justify-content: center;
+}
+
+.show-section{
+  display: grid;
+}
+
 
 .password-input-center {
   display: flex;
@@ -81,11 +128,6 @@
   padding-bottom: 30px;
 }
 
-.password-section {
-  display: grid;
-  justify-content: center;
-  /* gap: 1rem; */
-}
 
 .input-subtitle {
   display: grid;
@@ -223,7 +265,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 20px 20px;
+    padding: 10px 20px 20px 20px;
   }
   .password-input-container {
     display: grid;
@@ -353,13 +395,21 @@
 
 /* ======================= PASSWORD GENERATOR */
 
+.password-generator-main-section{
+  display: none;
+}
+
+.show-section{
+  display: grid;
+}
+
 .password-generator-container {
   display: grid;
-  border-top: 5px solid var(--btn-clr);
+  /* border-top: 5px solid var(--btn-clr); */
   padding: 20px;
   justify-content: center;
   font-size: 1rem;
-  height: 365px;
+  height: fit-content;
   gap: 2rem;
   background-color: var(--secn-btn-clr);
   text-align: center;
@@ -445,4 +495,18 @@
     width: 6rem;
     height: 45px;
   }
+}
+
+
+
+/* ======================= PROFILE SECTION */
+
+
+.profile-section{
+  display: grid;
+}
+
+
+.hide-section{
+  display: none;
 }

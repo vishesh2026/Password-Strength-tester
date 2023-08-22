@@ -35,7 +35,7 @@ function validation() {
 
 submitBtn.addEventListener("click", validation);
 
-// ======================================== 
+// ========================================
 
 // CONDITION STATEMENT FUNCTIONS
 
@@ -114,7 +114,7 @@ function containsNumbers(password) {
   }
 }
 
-// ======================================== 
+// ========================================
 
 // COLOUR STRENGTH STATUS CONTIONAL STATMENT FUNCTIONS
 
@@ -455,4 +455,41 @@ copyGenBtn.addEventListener("click", () => {
   } catch (error) {
     // console.log("unable to copy!");
   }
+});
+
+// ================================================== NAVBAR BUTTON
+
+const navBtn = document.querySelector(".profile-img");
+const navLinks = document.querySelector(".navlinks");
+
+navBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("show-nav");
+});
+
+// ================================================== SHOW SECTION
+
+const passwordSection = document.querySelector(".password-section");
+const profileSection = document.querySelector(".profile-section");
+const testerBtn = document.getElementById("tester");
+const generatorBtn = document.getElementById("generator");
+const profileBtn = document.getElementById("profile");
+console.log(profileBtn);
+const generatorSection = document.querySelector(
+  ".password-generator-main-section"
+);
+
+testerBtn.addEventListener("click", () => {
+  passwordSection.classList.add("show-section");
+  generatorSection.classList.remove("show-section");
+  profileSection.classList.add("hide-section");
+});
+generatorBtn.addEventListener("click", () => {
+  passwordSection.classList.remove("show-section");
+  generatorSection.classList.add("show-section");
+  profileSection.classList.add("hide-section");
+});
+profileBtn.addEventListener("click", () => {
+  passwordSection.classList.remove("show-section");
+  generatorSection.classList.remove("show-section");
+  profileSection.classList.remove("hide-section");
 });
