@@ -469,17 +469,23 @@ navBtn.addEventListener("click", () => {
   navLinks.classList.toggle("show-nav");
 });
 
-// ================================================== SHOW SECTION
+// ==================================================
+
+// SHOW SECTION
+
+// ==================================================
+
+// =========== classlist method
 
 const passwordSection = document.querySelector(".password-section");
-const profileSection = document.querySelector(".profile-section");
+const profileSection = document.querySelector(".home-section");
 const testerBtn = document.getElementById("tester");
 const generatorBtn = document.getElementById("generator");
-const profileBtn = document.getElementById("profile");
-console.log(profileBtn);
+const profileBtn = document.getElementById("home");
 const generatorSection = document.querySelector(
   ".password-generator-main-section"
 );
+const getStartedBtn = document.querySelector(".get-started-btn");
 
 testerBtn.addEventListener("click", () => {
   passwordSection.classList.add("show-section");
@@ -495,4 +501,10 @@ profileBtn.addEventListener("click", () => {
   passwordSection.classList.remove("show-section");
   generatorSection.classList.remove("show-section");
   profileSection.classList.remove("hide-section");
+});
+
+getStartedBtn.addEventListener("click", () => {
+  passwordSection.classList.add("show-section");
+  generatorSection.classList.remove("show-section");
+  profileSection.classList.add("hide-section");
 });

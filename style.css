@@ -13,6 +13,7 @@
   --secn-btn-clr: #dcfeea;
   /* --heading-clr: #55dde0; */
   --hightlight-btn-clr: #06da5a;
+  --background-clr-2: burlywood;
 }
 
 .tall-guy-presents,
@@ -114,10 +115,9 @@
   justify-content: center;
 }
 
-.show-section{
+.show-section {
   display: grid;
 }
-
 
 .password-input-center {
   display: flex;
@@ -127,7 +127,6 @@
   gap: 30px;
   padding-bottom: 30px;
 }
-
 
 .input-subtitle {
   display: grid;
@@ -395,11 +394,12 @@
 
 /* ======================= PASSWORD GENERATOR */
 
-.password-generator-main-section{
+.password-generator-main-section {
+  /* display: grid; */
   display: none;
 }
 
-.show-section{
+.show-section {
   display: grid;
 }
 
@@ -497,16 +497,89 @@
   }
 }
 
+/* ======================= HOME SECTION */
 
-
-/* ======================= PROFILE SECTION */
-
-
-.profile-section{
+.home-section {
   display: grid;
+  padding: 20px;
+  gap: 2rem;
+  /* background-color: burlywood; */
 }
 
-
-.hide-section{
+.hide-section {
   display: none;
+}
+
+.banner-container {
+  display: grid;
+  height: 20vh;
+  /* width: 100%; */
+}
+
+.banner-container h1 {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: #06da5a;
+  font-size: 2.5rem;
+  padding: 1rem;
+  text-align: center;
+  border: 2px solid;
+}
+
+.get-started-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  /* background-color: burlywood; */
+}
+
+.get-started-container h1 {
+  font-size: 1rem;
+}
+
+.get-started-container p {
+  /* background-color: burlywood; */
+  font-size: 1.2rem;
+}
+
+.get-started-btn {
+  width: 100px;
+  height: 60px;
+  font-size: 1rem;
+}
+
+.get-started-btn:hover {
+  background-color: var(--hightlight-btn-clr);
+  /* color: white; */
+  transition: 800ms;
+}
+
+.advice-container {
+  display: grid;
+  border: #04aa47;
+}
+
+.advice-container h1{
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 2px solid;
+}
+
+.advice-container * {
+  background-color: var(--background-clr-2);
+  padding: 1rem;
+}
+.advice-card {
+  display: grid;
+  justify-items: center;
+}
+
+.advice-icon {
+  display: grid;
+  font-size: 5rem;
+  padding: 1rem;
+  color: var(--btn-clr);
 }
