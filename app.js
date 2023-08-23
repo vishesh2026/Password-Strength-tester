@@ -43,7 +43,7 @@ submitBtn.addEventListener("click", validation);
 
 function noPassword(password) {
   if (password.trim().length === 0) {
-    notificationMessageTwo.innerHTML = `<i class='message-item'>Please enter a password.</i>`;
+    notificationMessageTwo.innerHTML = `<i class='message-item' style="color: red">Please enter a password.</i>`;
     strengthStatusBar1.classList.remove("red");
     strengthStatusBar1.classList.remove("orange");
     strengthStatusBar2.classList.remove("orange");
@@ -78,6 +78,7 @@ function containsSpecialCharacters(password) {
     password.length > 7 &&
     specialCharacters.some((char) => !password.includes(char))
   ) {
+    specCheck.innerHTML = `<i class="fa-regular fa-square"></i><p>Password contains a special character</p>`;
     return false;
   } else {
     specCheck.innerHTML = `<i class="fa-regular fa-square"></i><p>Password contains a special character</p>`;
@@ -93,6 +94,7 @@ function containsCapitalLetter(password) {
     capCheck.innerHTML = `<i class="fa-solid fa-check"></i><p>Password contains a capital letter</p>`;
     return true;
   } else if (password.length > 7 && !capitalLetterCheck) {
+    capCheck.innerHTML = `<i class="fa-regular fa-square"></i><p>Password contains a capital letter</p>`;
     return false;
   } else {
     capCheck.innerHTML = `<i class="fa-regular fa-square"></i><p>Password contains a capital letter</p>`;
@@ -108,6 +110,7 @@ function containsNumbers(password) {
     numCheck.innerHTML = `<i class="fa-solid fa-check"></i><p>Password contains a number</p>`;
     return true;
   } else if (password.length > 7 && !numberCheck) {
+    numCheck.innerHTML = `<i class="fa-regular fa-square"></i><p>Password contains a number</p>`;
     return false;
   } else {
     numCheck.innerHTML = `<i class="fa-regular fa-square"></i><p>Password contains a number</p>`;
@@ -131,7 +134,7 @@ function strongPassword(password) {
   ) {
     console.log("strong");
     strengthStatus.textContent = "Password is strong!";
-    notificationMessageTwo.innerHTML = `<i class='message-item'>Password is ready to be copied!</i>`;
+    notificationMessageTwo.innerHTML = `<i class='message-item' style="color: green">Password is ready to be copied!</i>`;
     strengthStatusBar1.classList.remove("red");
     strengthStatusBar1.classList.remove("orange");
     strengthStatusBar2.classList.remove("orange");
