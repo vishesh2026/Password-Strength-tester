@@ -35,7 +35,8 @@
   height: 25vh;
   font-style: oblique;
   font-size: 50px;
-  background-image: radial-gradient(#06b24b, #06d158, #04aa47);
+  /* background-image: radial-gradient(#06b24b, #06d158, #04aa47); */
+  background-color: var(--hightlight-btn-clr);
   color: rgb(255, 255, 255);
 }
 
@@ -61,29 +62,30 @@
 .profile {
   display: flex;
   /* justify-content: right; */
-  padding: 1rem 1rem 0rem 1rem;
+  padding: 0rem 1rem 0rem 1rem;
+  border-bottom: 2px solid var(--btn-clr);
 }
 
 .profile-image-div {
   display: grid;
-  border-bottom: 2px solid var(--btn-clr);
   padding: 5px;
+  /* border-bottom: 2px solid var(--btn-clr); */
 }
 
 .profile-img {
   display: grid;
   justify-content: right;
-  height: 50px;
+  height: 45px;
   border-radius: 50%;
 }
 
 .navlinks {
   display: flex;
   justify-content: space-evenly;
-  width: 0;
+  width: 100%;
   overflow: hidden;
   align-items: center;
-  border-bottom: 2px solid var(--btn-clr);
+  /* border-bottom: 2px solid var(--btn-clr); */
 }
 
 .show-nav {
@@ -113,6 +115,7 @@
   display: none;
   /* display: grid; */
   justify-content: center;
+  overflow: auto;
 }
 
 .show-section {
@@ -125,6 +128,7 @@
   align-self: start;
   /* height: 330px; */
   gap: 30px;
+  height: 100vh;
   padding-bottom: 30px;
 }
 
@@ -265,14 +269,17 @@
     flex-direction: column;
     justify-content: space-evenly;
     padding: 10px 20px 20px 20px;
+    /* height: 50vh; */
+    height: fit-content;
+    width: 100%;
   }
   .password-input-container {
     display: grid;
-    grid-template-rows: auto auto auto auto auto;
+    grid-template-rows: repeat(1fr 1fr 0.5fr 1.5fr 1fr);
     gap: 15px;
     align-items: center;
     justify-content: space-between;
-    /* height: 60vh; */
+    height: fit-content;
   }
 
   .input-subtitle {
@@ -514,6 +521,7 @@
   display: grid;
   height: 20vh;
   /* width: 100%; */
+  height: 100%;
 }
 
 .banner-container h1 {
@@ -521,10 +529,10 @@
   justify-content: center;
   align-items: center;
   background-color: #06da5a;
-  font-size: 2.5rem;
+  font-size: 2rem;
   padding: 1rem;
   text-align: center;
-  border: 2px solid;
+  border: 1px solid;
 }
 
 .get-started-container {
@@ -561,7 +569,7 @@
   border: #04aa47;
 }
 
-.advice-container h1{
+.advice-container h1 {
   display: grid;
   justify-content: center;
   text-align: center;
