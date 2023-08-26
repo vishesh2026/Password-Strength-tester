@@ -3,17 +3,16 @@
   margin: 0;
   box-sizing: border-box;
   color: var(--text-clr);
-  background-color: var(--background-clr);
+  background-color: var(--background-document);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 :root {
-  --background-clr: #f9fff0;
-  --btn-clr: #04aa47;
-  --secn-btn-clr: #dcfeea;
-  /* --heading-clr: #55dde0; */
-  --hightlight-btn-clr: #06da5a;
-  --background-clr-2: burlywood;
+  --background-document: #f5faeb;
+  --primary-clr: #b3e7a6;
+  --secondary-clr: #c7f0d3;
+  --highlight-clr: #31b95a;
+  --box-shadow: rgba(49, 185, 90, 0.5);
 }
 
 .tall-guy-presents,
@@ -36,24 +35,23 @@
   font-style: oblique;
   font-size: 50px;
   /* background-image: radial-gradient(#06b24b, #06d158, #04aa47); */
-  background-color: var(--hightlight-btn-clr);
+  background-color: var(--background-document);
   color: rgb(255, 255, 255);
 }
 
-@media screen and (max-width: 760px) {
-  .app-main-title {
-    font-size: 35px;
-  }
+.app-main-title {
+  font-size: 35px;
+  color: var(--highlight-clr);
+}
 
-  .tall-guy-presents {
-    font-size: 15px;
-  }
+.tall-guy-presents {
+  font-size: 15px;
+}
 
-  .nav {
-    width: 100%;
-    height: 12vh;
-    padding-top: 5px;
-  }
+.nav {
+  width: 100%;
+  height: 12vh;
+  padding-top: 5px;
 }
 
 /* ======================== navigation center */
@@ -63,7 +61,7 @@
   display: flex;
   /* justify-content: right; */
   padding: 0rem 1rem 0rem 1rem;
-  border-bottom: 2px solid var(--btn-clr);
+  border-bottom: 2px solid var(--highlight-clr);
 }
 
 .profile-image-div {
@@ -105,7 +103,7 @@
 }
 
 .nav-link:hover {
-  color: #04aa47;
+  color: var(--highlight-clr);
   transition: 300ms;
 }
 
@@ -122,24 +120,19 @@
   display: grid;
 }
 
-.password-input-center {
-  display: flex;
-  /* height: 70vh; */
-  align-self: start;
-  /* height: 330px; */
-  gap: 30px;
-  height: 100vh;
-  padding-bottom: 30px;
-}
-
 .input-subtitle {
   display: grid;
   justify-content: center;
   align-content: center;
-  /* height: 10vh; */
+  font-size: 1.5rem;
+  height: 8vh;
+  width: 90vw;
+  overflow: visible;
+  border-radius: 10px;
+  color: white;
   /* text-decoration: underline; */
 
-  color: var(--btn-heading-clr);
+  background-color: var(--highlight-clr);
 }
 
 /* ================================== password input container */
@@ -156,24 +149,50 @@
 .input {
   /* width: 25rem; */
   outline: none;
+  width: 60%;
+  justify-self: center;
   border: 1.5px solid black;
   height: 50px;
   padding: 5px;
   font-size: 1.2rem;
-  background-color: var(--secn-btn-clr);
+  background-color: var(--background-document);
 }
 
-.submit-btn {
+.submit-btn{
   width: 6rem;
   height: 2rem;
   justify-self: center;
-  background-color: var(--btn-clr);
-  color: white;
+  background-color: var(--primary-clr);
+  color: black;
   font-size: 18px;
 }
 
 .submit-btn:hover {
-  background-color: var(--hightlight-btn-clr);
+  background-color: var(--highlight-clr);
+}
+
+.loading-container {
+  text-align: center;
+  display: none;
+}
+
+.loading-icon {
+  width: 24px;
+  height: 24px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-top: 5px solid var(--highlight-clr);
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  margin: 0 auto 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .error-message {
@@ -263,140 +282,131 @@
   align-self: flex-start;
 }
 
-@media screen and (max-width: 760px) {
-  .password-input-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 10px 20px 20px 20px;
-    /* height: 50vh; */
-    height: fit-content;
-    width: 100%;
-  }
-  .password-input-container {
-    display: grid;
-    grid-template-rows: repeat(1fr 1fr 0.5fr 1.5fr 1fr);
-    gap: 15px;
-    align-items: center;
-    justify-content: space-between;
-    height: fit-content;
-  }
+.password-input-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px 20px 20px 20px;
+  /* height: 50vh; */
+  height: fit-content;
+  width: 100%;
+}
+.password-input-container {
+  display: grid;
+  grid-template-rows: repeat(1fr 1fr 0.5fr 1.5fr 1fr);
+  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+  height: fit-content;
+}
 
-  .input-subtitle {
-    height: 5vh;
-    font-size: 18px;
-  }
+.input {
+  /* width: 100%; */
+  outline: none;
+  border: 1.5px solid black;
+  height: 50px;
+  padding: 1rem;
+  background-color: var(--secn-btn-clr);
+  font-size: 1rem;
+}
 
-  .input {
-    /* width: 100%; */
-    outline: none;
-    border: 1.5px solid black;
-    height: 50px;
-    padding: 1rem;
-    background-color: var(--secn-btn-clr);
-    font-size: 1rem;
-  }
+.submit-btn {
+  display: grid;
+  width: 6rem;
+  height: 2rem;
+  justify-self: center;
+  font-size: 15px;
+  align-content: center;
+}
 
-  .submit-btn {
-    display: grid;
-    width: 6rem;
-    height: 2rem;
-    justify-self: center;
-    background-color: var(--btn-clr);
-    color: white;
-    font-size: 15px;
-    align-content: center;
-  }
+.error-message,
+.error-message-two {
+  font-size: 0.9rem;
+  justify-self: center;
+  align-self: center;
+  /* line-height: 5px; */
+  gap: 5px;
+}
 
-  .error-message,
-  .error-message-two {
-    font-size: 0.9rem;
-    justify-self: center;
-    align-self: center;
-    /* line-height: 5px; */
-    gap: 5px;
-  }
+.characters,
+.numbers,
+.special,
+.capital {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
 
-  .characters,
-  .numbers,
-  .special,
-  .capital {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-  }
+.copy-to-clipboard-btn {
+  display: none;
+  width: 6rem;
+  height: 3rem;
+  justify-self: center;
+  align-items: center;
+  font-size: 15px;
+}
 
-  .copy-to-clipboard-btn {
-    display: none;
-    width: 6rem;
-    height: 3rem;
-    justify-self: center;
-    align-items: center;
-    font-size: 15px;
-  }
+.copy-to-clipboard-btn:hover {
+  border: 2px solid #04aa47;
+  cursor: pointer;
+}
 
-  .copy-to-clipboard-btn:hover {
-    border: 2px solid #04aa47;
-    cursor: pointer;
-  }
+/* =================strength status bar */
 
-  /* =================strength status bar */
+.strength-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
 
-  .strength-container {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    justify-content: center;
-    align-items: center;
-  }
+.strength-status-title {
+  padding-bottom: 10px;
+  justify-self: center;
+  align-self: end;
+  padding-bottom: 0;
+  font-size: 18px;
+}
 
-  .strength-status-title {
-    padding-bottom: 10px;
-    justify-self: center;
-    align-self: end;
-    padding-bottom: 0;
-    font-size: 18px;
-  }
+.status-bar {
+  background-color: var(--secn-btn-clr);
+  height: 10px;
+  width: 100%;
+  border: 0.5px solid black;
+}
+.strength-status-full-bar {
+  display: flex;
+}
 
-  .status-bar {
-    background-color: var(--secn-btn-clr);
-    height: 10px;
-    width: 100%;
-    border: 0.5px solid black;
-  }
-  .strength-status-full-bar {
-    display: flex;
-  }
+.strength-status {
+  display: grid;
+  justify-content: center;
+}
 
-  .strength-status {
-    display: grid;
-    justify-content: center;
-  }
+.show {
+  display: grid;
+}
 
-  .show {
-    display: grid;
-  }
+.green {
+  background-color: #04aa47;
+}
 
-  .green {
-    background-color: #04aa47;
-  }
+.orange {
+  background-color: orange;
+}
 
-  .orange {
-    background-color: orange;
-  }
+.red {
+  background-color: red;
+}
 
-  .red {
-    background-color: red;
-  }
+.strength-status-full-bar {
+  display: flex;
+}
 
-  .strength-status-full-bar {
-    display: flex;
-  }
-
-  .strength-status {
-    justify-self: center;
-    height: 2rem;
-    align-self: flex-start;
-  }
+.strength-status {
+  justify-self: center;
+  height: 2rem;
+  align-self: flex-start;
 }
 
 /* ======================= PASSWORD GENERATOR */
@@ -508,7 +518,7 @@
 
 .home-section {
   display: grid;
-  padding: 20px;
+  padding: 1rem;
   gap: 2rem;
   /* background-color: burlywood; */
 }
@@ -520,74 +530,104 @@
 .banner-container {
   display: grid;
   height: 20vh;
-  /* width: 100%; */
   height: 100%;
+  /* border: solid; */
+  border-radius: 10px;
 }
 
 .banner-container h1 {
   display: grid;
   justify-content: center;
   align-items: center;
-  background-color: #06da5a;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 1rem;
   text-align: center;
-  border: 1px solid;
+  border-radius: 10px;
+  /* border: 1px solid; */
+  background-color: var(--highlight-clr);
+  color: white;
+  height: 8vh;
 }
 
 .get-started-container {
-  display: flex;
+  display: grid;
   gap: 1rem;
   align-items: center;
   justify-content: center;
-  /* background-color: burlywood; */
-}
-
-.get-started-container h1 {
-  font-size: 1rem;
+  background-color: var(--secondary-clr);
+  padding: 20px 0px 20px 0px;
+  border-radius: 10px;
 }
 
 .get-started-container p {
-  /* background-color: burlywood; */
+  display: grid;
+  background-color: var(--secondary-clr);
   font-size: 1.2rem;
+  height: 100%;
+  align-items: center;
+  text-align: center;
 }
 
-.get-started-btn {
-  width: 100px;
+.get-started-btn, .info-btn  {
+  width: 80px;
   height: 60px;
   font-size: 1rem;
+  justify-self: center;
+  border-radius: 10px;
 }
 
-.get-started-btn:hover {
-  background-color: var(--hightlight-btn-clr);
-  /* color: white; */
-  transition: 800ms;
+.get-started-btn:hover, .info-btn:hover {
+  background-color: var(--highlight-clr);
+  color: white;
+  transition: 500ms;
 }
 
 .advice-container {
   display: grid;
-  border: #04aa47;
+  /* border: #04aa47; */
+  gap: 1rem;
 }
 
 .advice-container h1 {
   display: grid;
   justify-content: center;
   text-align: center;
-  border-bottom: 2px solid;
+  /* border-bottom: 2px solid; */
 }
 
 .advice-container * {
-  background-color: var(--background-clr-2);
   padding: 1rem;
+  /* background-color: rgba(211, 211, 211, 0.6); */
 }
 .advice-card {
   display: grid;
   justify-items: center;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: rgba(211, 211, 211, 0.5);
+  width: 100%;
 }
 
 .advice-icon {
   display: grid;
   font-size: 5rem;
-  padding: 1rem;
-  color: var(--btn-clr);
+  justify-items: center;
+  color: var(--highlight-clr);
+  background-color: rgba(211, 211, 211, 0.1);
 }
+
+.advice-container p {
+  /* background-color: transparent; */
+  border: 0.5px solid;
+  border-radius: 5px;
+  /* background-color: var(--background-document); */
+  background-color: var(--secondary-clr);
+  line-height: 1.2rem;
+  box-shadow: 3px 5px var(--box-shadow);
+}
+
+
+/* ======================= FOOTER SECTION */
+
+
+.foo

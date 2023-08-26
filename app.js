@@ -20,20 +20,42 @@ const messageItem = document.querySelector(".message-item");
 
 // ========================================
 
-function validation() {
-  const password = input.value.trim();
 
-  characterLength(password);
-  containsCapitalLetter(password);
-  containsSpecialCharacters(password);
-  containsNumbers(password);
-  strongPassword(password);
-  goodPassword(password);
-  weakPassword(password);
-  noPassword(password);
+// submitBtn.addEventListener("click", validation);
+input.addEventListener("input", () => {
+  setTimeout(() => {
+    function validation(password) {
+      // Your validation logic goes here
+      characterLength(password);
+      containsCapitalLetter(password);
+      containsSpecialCharacters(password);
+      containsNumbers(password);
+      strongPassword(password);
+      goodPassword(password);
+      weakPassword(password);
+      noPassword(password);
+    }
+    
+    const password = input.value.trim();
+    validation(password);
+    hideLoading()
+  }, 800);
+  showLoading(); 
+});
+
+// Loading icon
+const loadingContainer = document.querySelector(".loading-container");
+
+function showLoading() {
+  loadingContainer.style.display = "block";
 }
 
-submitBtn.addEventListener("click", validation);
+function hideLoading() {
+  loadingContainer.style.display = "none";
+}
+
+
+
 
 // ========================================
 

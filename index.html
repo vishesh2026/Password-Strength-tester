@@ -44,6 +44,7 @@
       <div class="get-started-container">
         <p>Test your password's strength now:</p>
         <button class="get-started-btn">Get Started</button>
+        <button class="info-btn">How it works</button>
       </div>
       <!-- advice container -->
       <div class="advice-container">
@@ -70,14 +71,17 @@
           <!-- advice card -->
           <i class="advice-icon fa-solid fa-key" id=""></i>
           <p>
-            Passphrase: Instead of a single word, use a combination of random words, numbers, and symbols that are easy for you to remember but difficult for others to guess. For example: "BlueMoon$42@Jump!"
+            Passphrase: Instead of a single word, use a combination of random
+            words, numbers, and symbols that are easy for you to remember but
+            difficult for others to guess. For example: "BlueMoon$42@Jump!"
           </p>
         </article>
         <article class="advice-card">
           <!-- advice card -->
           <i class="advice-icon fa-solid fa-user" id=""></i>
           <p>
-            Length Matters: Generally, longer passwords are stronger. Aim for at least 12 characters, and ideally even more.
+            Length Matters: Generally, longer passwords are stronger. Aim for at
+            least 12 characters, and ideally even more.
           </p>
         </article>
       </div>
@@ -116,10 +120,15 @@
               <p>Password contains a number</p>
             </div>
           </div>
-          <button class="submit-btn" type="submit" action="submit">Test</button>
+          <!-- <button class="submit-btn" type="submit" action="submit">Test</button> -->
           <button class="copy-to-clipboard-btn">
             Click to copy:<i class="copy-icon fa-solid fa-copy"></i>
           </button>
+          <!--loading  -->
+          <div class="loading-container">
+            <div class="loading-icon"></div>
+            <p>Loading...</p>
+          </div>
         </article>
         <!-- ======= password strength status bar ======= -->
         <article class="strength-container">
@@ -162,12 +171,9 @@
     <section class="footer">
       <footer class="footer-center">
         <!-- footer links -->
-        <div class="footer-links-container">
-        </div>
+        <div class="footer-links-container"></div>
         <!-- contact form -->
-        <div class="footer contact-container">
-
-        </div>
+        <div class="footer contact-container"></div>
       </footer>
     </section>
   </body>
