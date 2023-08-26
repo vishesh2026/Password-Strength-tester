@@ -30,7 +30,7 @@ input.addEventListener("input", () => {
       containsSpecialCharacters(password);
       containsNumbers(password);
       strongPassword(password);
-      goodPassword(password);
+      moderatePassword(password);
       weakPassword(password);
       noPassword(password);
     }
@@ -76,7 +76,7 @@ function noPassword(password) {
 function characterLength(password) {
   const charCheck = document.querySelector(".characters");
   if (password.length > 7) {
-    charCheck.innerHTML = `<i class="fa-solid fa-check"></i><p>Password is at least 8 characters long</p>`;
+    charCheck.innerHTML = `<i class="fa-solid fa-check" style="color:green"></i><p>Password is at least 8 characters long</p>`;
     messageItem.innerHTML = `-`;
 
     return true;
@@ -90,7 +90,7 @@ function characterLength(password) {
 function containsSpecialCharacters(password) {
   const specCheck = document.querySelector(".special");
   if (specialCharacters.some((char) => password.includes(char))) {
-    specCheck.innerHTML = `<i class="fa-solid fa-check"></i><p>Password contains a special character</p>`;
+    specCheck.innerHTML = `<i class="fa-solid fa-check" style="color:green"></i><p>Password contains a special character</p>`;
     return true;
   } else if (
     password.length > 7 &&
@@ -109,7 +109,7 @@ function containsCapitalLetter(password) {
   // googled method params
   const capitalLetterCheck = password.match(/[A-Z]/g, "");
   if (capitalLetterCheck) {
-    capCheck.innerHTML = `<i class="fa-solid fa-check"></i><p>Password contains a capital letter</p>`;
+    capCheck.innerHTML = `<i class="fa-solid fa-check" style="color:green"></i><p>Password contains a capital letter</p>`;
     return true;
   } else if (password.length > 7 && !capitalLetterCheck) {
     capCheck.innerHTML = `<i class="fa-regular fa-square"></i><p>Password contains a capital letter</p>`;
@@ -125,7 +125,7 @@ function containsNumbers(password) {
   // googled method params
   const numberCheck = password.match(/[1-9]/g, "");
   if (numberCheck) {
-    numCheck.innerHTML = `<i class="fa-solid fa-check"></i><p>Password contains a number</p>`;
+    numCheck.innerHTML = `<i class="fa-solid fa-check" style="color:green"></i><p>Password contains a number</p>`;
     return true;
   } else if (password.length > 7 && !numberCheck) {
     numCheck.innerHTML = `<i class="fa-regular fa-square"></i><p>Password contains a number</p>`;
@@ -151,8 +151,8 @@ function strongPassword(password) {
     containsNumbers(password)
   ) {
     console.log("strong");
-    strengthStatus.textContent = "Password is strong!";
-    notificationMessageTwo.innerHTML = `<i class='message-item' style="color: green">Password is ready to be copied!</i>`;
+    strengthStatus.textContent = "Strong!";
+    notificationMessageTwo.innerHTML = `<i class='message-item' style="color: green">Password is ready to be used!</i>`;
     strengthStatusBar1.classList.remove("red");
     strengthStatusBar1.classList.remove("orange");
     strengthStatusBar2.classList.remove("orange");
@@ -168,8 +168,8 @@ function strongPassword(password) {
   }
 }
 
-// good password
-function goodPassword(password) {
+// moderate password
+function moderatePassword(password) {
   if (
     // length no correct but have all other characters
     !characterLength(password) &&
@@ -177,8 +177,8 @@ function goodPassword(password) {
     containsCapitalLetter(password) &&
     containsNumbers(password)
   ) {
-    console.log("good1");
-    strengthStatus.textContent = "Password is good";
+    console.log("moderate1");
+    strengthStatus.textContent = "Moderate.";
     notificationMessageTwo.innerHTML = ``;
     strengthStatusBar1.classList.remove("red");
     strengthStatusBar1.classList.add("orange");
@@ -193,8 +193,8 @@ function goodPassword(password) {
   //   ((containsSpecialCharacters(password) && containsCapitalLetter(password)) ||
   //     containsNumbers(password))
   // ) {
-  //   console.log("good2");
-  //   strengthStatus.textContent = "Password is good";
+  //   console.log("moderate2");
+  //   strengthStatus.textContent = "Password is moderate";
   //   strengthStatusBar1.classList.remove("red");
   //   strengthStatusBar1.classList.add("orange");
   //   strengthStatusBar2.classList.add("orange");
@@ -215,8 +215,8 @@ function goodPassword(password) {
         containsSpecialCharacters(password) &&
         !containsNumbers(password)))
   ) {
-    // console.log("good3");
-    strengthStatus.textContent = "Password is good";
+    // console.log("moderate3");
+    strengthStatus.textContent = "Moderate.";
     notificationMessageTwo.innerHTML = ``;
     strengthStatusBar1.classList.remove("red");
     strengthStatusBar1.classList.add("orange");
@@ -237,8 +237,8 @@ function goodPassword(password) {
         containsSpecialCharacters(password) &&
         !containsNumbers(password)))
   ) {
-    // console.log("good4");
-    strengthStatus.textContent = "Password is good";
+    // console.log("moderate4");
+    strengthStatus.textContent = "Moderate.";
     notificationMessageTwo.innerHTML = ``;
     strengthStatusBar1.classList.remove("red");
     strengthStatusBar1.classList.add("orange");
@@ -248,7 +248,7 @@ function goodPassword(password) {
     strengthStatusBar3.classList.remove("green");
     return true;
   } else {
-    // console.log("NOT good");
+    // console.log("NOT moderate");
     return false;
   }
 }
@@ -264,7 +264,7 @@ function weakPassword(password) {
     !containsNumbers(password)
   ) {
     // console.log("weak1");
-    strengthStatus.textContent = "Password is weak";
+    strengthStatus.textContent = "Weak...";
     notificationMessageTwo.innerHTML = ``;
     strengthStatusBar1.classList.add("red");
     strengthStatusBar1.classList.remove("organge");
@@ -314,7 +314,7 @@ function weakPassword(password) {
     containsNumbers(password)
   ) {
     // console.log("weak4");
-    strengthStatus.textContent = "Password is weak";
+    strengthStatus.textContent = "Weak...";
     notificationMessageTwo.innerHTML = ``;
     strengthStatusBar1.classList.add("red");
     strengthStatusBar1.classList.remove("orange");
@@ -336,7 +336,7 @@ function weakPassword(password) {
         !containsNumbers(password)))
   ) {
     // console.log("weak5");
-    strengthStatus.textContent = "Password is weak";
+    strengthStatus.textContent = "Weak...";
     notificationMessageTwo.innerHTML = ``;
     strengthStatusBar1.classList.add("red");
     strengthStatusBar1.classList.remove("orange");
@@ -354,7 +354,7 @@ function weakPassword(password) {
     !containsNumbers(password)
   ) {
     // console.log("weak6");
-    strengthStatus.textContent = "Password is weak";
+    strengthStatus.textContent = "Weak...";
     notificationMessageTwo.innerHTML = ``;
     strengthStatusBar1.classList.add("red");
     strengthStatusBar1.classList.remove("organge");
@@ -376,7 +376,7 @@ function weakPassword(password) {
         !containsNumbers(password)))
   ) {
     // console.log("weak7");
-    strengthStatus.textContent = "Password is weak";
+    strengthStatus.textContent = "Weak...";
     notificationMessageTwo.innerHTML = ``;
     strengthStatusBar1.classList.add("red");
     strengthStatusBar1.classList.remove("orange");
@@ -493,16 +493,18 @@ navBtn.addEventListener("click", () => {
 
 // ==================================================
 
-// =========== classlist method
-
 const passwordSection = document.querySelector(".password-section");
 const profileSection = document.querySelector(".home-section");
-const testerBtn = document.getElementById("tester");
-const generatorBtn = document.getElementById("generator");
-const profileBtn = document.getElementById("home");
 const generatorSection = document.querySelector(
   ".password-generator-main-section"
 );
+const aboutSection = document.querySelector(".about-section");
+console.log(aboutSection);
+const testerBtn = document.getElementById("tester");
+const generatorBtn = document.getElementById("generator");
+const profileBtn = document.getElementById("home");
+const aboutBtn = document.getElementById("about");
+
 const getStartedBtn = document.querySelector(".get-started-btn");
 
 testerBtn.addEventListener("click", () => {
@@ -525,6 +527,11 @@ getStartedBtn.addEventListener("click", () => {
   passwordSection.classList.add("show-section");
   generatorSection.classList.remove("show-section");
   profileSection.classList.add("hide-section");
+});
+aboutBtn.addEventListener("click", () => {
+  //  + window.pageOffset is die current vertical scroll position on the page that you'd want to take into account
+  const aboutHeight = aboutSection.getBoundingClientRect().top + window.pageYOffset - 10;
+  window.scrollTo({ top: aboutHeight, behavior: "smooth" });
 });
 
 // ==================================================
