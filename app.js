@@ -20,7 +20,6 @@ const messageItem = document.querySelector(".message-item");
 
 // ========================================
 
-
 // submitBtn.addEventListener("click", validation);
 input.addEventListener("input", () => {
   setTimeout(() => {
@@ -35,12 +34,12 @@ input.addEventListener("input", () => {
       weakPassword(password);
       noPassword(password);
     }
-    
+
     const password = input.value.trim();
     validation(password);
-    hideLoading()
+    hideLoading();
   }, 800);
-  showLoading(); 
+  showLoading();
 });
 
 // Loading icon
@@ -53,9 +52,6 @@ function showLoading() {
 function hideLoading() {
   loadingContainer.style.display = "none";
 }
-
-
-
 
 // ========================================
 
@@ -530,3 +526,16 @@ getStartedBtn.addEventListener("click", () => {
   generatorSection.classList.remove("show-section");
   profileSection.classList.add("hide-section");
 });
+
+// ==================================================
+
+// FOOTER
+
+// ==================================================
+
+const date = document.getElementById("date");
+
+const getDate = new Date();
+const year = getDate.getFullYear();
+
+date.textContent = year;
