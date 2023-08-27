@@ -42,7 +42,13 @@ input.addEventListener("input", () => {
   showLoading();
 });
 
-// Loading icon
+/* 
+=============================================
+
+LOADING ICON
+
+=============================================
+*/
 const loadingContainer = document.querySelector(".loading-container");
 
 function showLoading() {
@@ -413,7 +419,13 @@ function weakPassword(password) {
   }
 }
 
-// ================================================== COPY BUTTON
+/* 
+=============================================
+
+COPY BUTTON
+
+=============================================
+*/
 
 copyBtn.addEventListener("click", () => {
   try {
@@ -428,7 +440,13 @@ copyBtn.addEventListener("click", () => {
   }
 });
 
-// ================================================== PASSWORD GENERATOR
+/* 
+=============================================
+
+PASSWORD GENERATOR
+
+=============================================
+*/
 
 const generateBtn = document.querySelector(".password-generator-btn");
 const generatedPasswordDiv = document.querySelector(".generated-password");
@@ -477,7 +495,13 @@ generateBtn.addEventListener("click", () => {
   generatedPasswordDiv.textContent = `${randomNumbersCharacter1}${randomLowLetterCharacter1}${randomSpecialCharacter1}${randomUpLetterCharacter1}${randomNumbersCharacter2}${randomSpecialCharacter2}${randomLowLetterCharacter2}${randomUpLetterCharacter2}`;
 });
 
-// ================================================== COPY BUTTON
+/* 
+=============================================
+
+COPY BUTTON
+
+=============================================
+*/
 
 const copyGenBtn = document.querySelector(".copy-to-clipboard-btn-2");
 
@@ -499,7 +523,13 @@ copyGenBtn.addEventListener("click", () => {
   }
 });
 
-// ================================================== NAVBAR BUTTON
+/* 
+=============================================
+
+NAVBAR BUTTON
+
+=============================================
+*/
 
 const navBtn = document.querySelector(".profile-img");
 const navLinks = document.querySelector(".navlinks");
@@ -565,7 +595,13 @@ input.addEventListener("click", () => {
   window.scrollTo({ top: inputHeight, behavior: "smooth" });
 });
 
-// =========== colour change for tabs
+/* 
+=============================================
+
+CHANGE COLOUR OF TABS
+
+=============================================
+*/
 
 const navLinkElements = document.querySelectorAll(".nav-link");
 
@@ -582,7 +618,7 @@ console.log(navLinkElements);
 
 // ==================================================
 
-// FOOTER
+// FOOTER COPYRIGHT DATE
 
 // ==================================================
 
