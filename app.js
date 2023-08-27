@@ -226,7 +226,7 @@ function moderatePassword(password) {
     strengthStatusBar3.classList.remove("green");
     return true;
   } else if (
-    !characterLength(password) &&
+    password.length > 3 &&
     ((containsSpecialCharacters(password) &&
       containsNumbers(password) &&
       !containsCapitalLetter(password)) ||
@@ -237,7 +237,7 @@ function moderatePassword(password) {
         containsSpecialCharacters(password) &&
         !containsNumbers(password)))
   ) {
-    // console.log("moderate4");
+    console.log("moderate4");
     strengthStatus.textContent = "Moderate.";
     notificationMessageTwo.innerHTML = ``;
     strengthStatusBar1.classList.remove("red");
@@ -282,7 +282,7 @@ function weakPassword(password) {
     !containsNumbers(password)
   ) {
     // console.log("weak2");
-    strengthStatus.textContent = "No password...";
+    strengthStatus.textContent = "No password to check";
     strengthStatusBar1.classList.remove("red");
     strengthStatusBar1.classList.remove("organge");
     strengthStatusBar2.classList.remove("organge");
@@ -290,23 +290,21 @@ function weakPassword(password) {
     strengthStatusBar2.classList.remove("green");
     strengthStatusBar3.classList.remove("green");
     return true;
-  }
-  // else if (
-  //   !characterLength(password) &&
-  //   containsSpecialCharacters(password) &&
-  //   (!containsCapitalLetter(password) || !containsNumbers(password))
-  // ) {
-  //   console.log("weak3");
-  //   strengthStatus.textContent = "Password is weak";
-  //   strengthStatusBar1.classList.add("red");
-  //   strengthStatusBar1.classList.remove("orange");
-  //   strengthStatusBar2.classList.remove("orange");
-  //   strengthStatusBar1.classList.remove("green");
-  //   strengthStatusBar2.classList.remove("green");
-  //   strengthStatusBar3.classList.remove("green");
-  //   return true;
-  // }
-  else if (
+  } else if (
+    !characterLength(password) &&
+    containsSpecialCharacters(password) &&
+    (!containsCapitalLetter(password) || !containsNumbers(password))
+  ) {
+    console.log("weak3");
+    strengthStatus.textContent = "Password is weak";
+    strengthStatusBar1.classList.add("red");
+    strengthStatusBar1.classList.remove("orange");
+    strengthStatusBar2.classList.remove("orange");
+    strengthStatusBar1.classList.remove("green");
+    strengthStatusBar2.classList.remove("green");
+    strengthStatusBar3.classList.remove("green");
+    return true;
+  } else if (
     // only number added
     !characterLength(password) &&
     !containsSpecialCharacters(password) &&
@@ -493,13 +491,14 @@ navBtn.addEventListener("click", () => {
 
 // ==================================================
 
+// sections
 const passwordSection = document.querySelector(".password-section");
 const profileSection = document.querySelector(".home-section");
 const generatorSection = document.querySelector(
   ".password-generator-main-section"
 );
 const aboutSection = document.querySelector(".about-section");
-console.log(aboutSection);
+// btns
 const testerBtn = document.getElementById("tester");
 const generatorBtn = document.getElementById("generator");
 const profileBtn = document.getElementById("home");
@@ -508,11 +507,13 @@ const aboutBtn = document.getElementById("about");
 const getStartedBtn = document.querySelector(".get-started-btn");
 
 testerBtn.addEventListener("click", () => {
+  // testerBtn.style.color = "#31b95a";
   passwordSection.classList.add("show-section");
   generatorSection.classList.remove("show-section");
   profileSection.classList.add("hide-section");
 });
 generatorBtn.addEventListener("click", () => {
+  // generatorBtn.style.color = "#31b95a";
   passwordSection.classList.remove("show-section");
   generatorSection.classList.add("show-section");
   profileSection.classList.add("hide-section");
@@ -530,9 +531,31 @@ getStartedBtn.addEventListener("click", () => {
 });
 aboutBtn.addEventListener("click", () => {
   //  + window.pageOffset is die current vertical scroll position on the page that you'd want to take into account
-  const aboutHeight = aboutSection.getBoundingClientRect().top + window.pageYOffset - 10;
+  const aboutHeight =
+    aboutSection.getBoundingClientRect().top + window.pageYOffset - 10;
   window.scrollTo({ top: aboutHeight, behavior: "smooth" });
 });
+input.addEventListener("click", () => {
+  console.log("clicked input");
+  const inputHeight =
+    passwordSection.getBoundingClientRect().top + window.pageYOffset + 100;
+  window.scrollTo({ top: inputHeight, behavior: "smooth" });
+});
+
+// =========== colour change for tabs
+
+const navLinkElements = document.querySelectorAll(".nav-link");
+
+navLinkElements.forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinkElements.forEach((otherLink) => {
+      otherLink.style.color = "black";
+    });
+    link.style.color = "#31b95a";
+  });
+});
+
+console.log(navLinkElements);
 
 // ==================================================
 

@@ -91,6 +91,10 @@
   transition: 300ms;
 }
 
+#home{
+  color: var(--highlight-clr);
+}
+
 /* ====================== INPUT CENTER */
 
 .password-section {
@@ -151,7 +155,7 @@
   background-color: var(--background-document);
 }
 
-.submit-btn {
+/* .submit-btn {
   width: 6rem;
   height: 2rem;
   justify-self: center;
@@ -162,7 +166,7 @@
 
 .submit-btn:hover {
   background-color: var(--highlight-clr);
-}
+} */
 
 .loading-container {
   text-align: center;
@@ -472,10 +476,12 @@
   background-color: var(--highlight-clr);
   font-size: 18px;
   border-radius: 10px;
+  color: var(--background-document);
 }
 .password-generator-btn:hover {
   background-color: var(--primary-clr);
   transition: 500ms;
+  color: black;
 }
 
 .generated-password {
@@ -585,12 +591,13 @@
 }
 .get-started-btn {
   background-color: var(--highlight-clr);
+  color: white;
 }
 
 .get-started-btn:hover,
 .info-btn:hover {
   background-color: var(--primary-clr);
-  /* color: white; */
+  color: black;
   transition: 500ms;
 }
 
