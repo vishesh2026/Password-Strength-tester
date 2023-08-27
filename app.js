@@ -296,7 +296,7 @@ function weakPassword(password) {
     (!containsCapitalLetter(password) || !containsNumbers(password))
   ) {
     console.log("weak3");
-    strengthStatus.textContent = "Password is weak";
+    strengthStatus.textContent = "Weak...";
     strengthStatusBar1.classList.add("red");
     strengthStatusBar1.classList.remove("orange");
     strengthStatusBar2.classList.remove("orange");
@@ -374,6 +374,29 @@ function weakPassword(password) {
         !containsNumbers(password)))
   ) {
     // console.log("weak7");
+    strengthStatus.textContent = "Weak...";
+    notificationMessageTwo.innerHTML = ``;
+    strengthStatusBar1.classList.add("red");
+    strengthStatusBar1.classList.remove("orange");
+    strengthStatusBar2.classList.remove("orange");
+    strengthStatusBar1.classList.remove("green");
+    strengthStatusBar2.classList.remove("green");
+    strengthStatusBar3.classList.remove("green");
+    return true;
+  } else if (
+    password.length <= 3 &&
+    password.length >= 1 &&
+    ((!containsSpecialCharacters(password) &&
+      containsNumbers(password) &&
+      containsCapitalLetter(password)) ||
+      (!containsCapitalLetter(password) &&
+        containsNumbers(password) &&
+        containsSpecialCharacters(password)) ||
+      (containsCapitalLetter(password) &&
+        containsSpecialCharacters(password) &&
+        !containsNumbers(password)))
+  ) {
+    console.log("weak8");
     strengthStatus.textContent = "Weak...";
     notificationMessageTwo.innerHTML = ``;
     strengthStatusBar1.classList.add("red");
