@@ -59,6 +59,11 @@ NAVIGATION CENTER
 =============================================
 */
 
+.navigation-bar{
+  display: grid;
+  width: 100%;
+}
+
 .profile {
   display: flex;
   padding: 0rem 1rem 0rem 1rem;
@@ -67,6 +72,7 @@ NAVIGATION CENTER
 
 .profile-image-div {
   display: grid;
+  /* width: 100%; */
   padding: 5px;
 }
 
@@ -479,18 +485,17 @@ HOME SECTION
   padding: 1rem;
   padding-bottom: 3rem;
   gap: 2rem;
-  /* background-color: burlywood; */
 }
 
 .hide-section {
   display: none;
 }
 
+/* ======================== banner */
+
 .banner-container {
   display: grid;
-  /* height: 20vh; */
   height: 100%;
-  /* border: solid; */
   border-radius: 10px;
 }
 
@@ -502,12 +507,12 @@ HOME SECTION
   padding: 1rem;
   text-align: center;
   border-radius: 10px;
-  /* border: 1px solid; */
   background-color: var(--highlight-clr);
   color: white;
   height: 100%;
 }
 
+/* ======================= get started */
 .get-started-container {
   display: grid;
   gap: 1rem;
@@ -516,6 +521,13 @@ HOME SECTION
   background-color: var(--secondary-clr);
   padding: 20px 0px 20px 0px;
   border-radius: 10px;
+}
+
+.get-started-container article {
+  display: grid;
+  height: 100%;
+  background-color: transparent;
+  gap: 1rem;
 }
 
 .get-started-container p {
@@ -547,9 +559,14 @@ HOME SECTION
   transition: 500ms;
 }
 
+#shield {
+  display: none;
+}
+
+/* ========================== advice */
+
 .advice-container {
   display: grid;
-  /* border: #04aa47; */
   gap: 1rem;
 }
 
@@ -557,29 +574,29 @@ HOME SECTION
   display: grid;
   justify-content: center;
   text-align: center;
-  /* border-bottom: 2px solid; */
 }
 
 .advice-center {
   display: grid;
-gap: 10px;
+  gap: 10px;
 }
 
-.advice-center h1{
+.advice-center h1 {
   text-align: center;
 }
 
 .advice-container * {
   padding: 1rem;
-  /* background-color: rgba(211, 211, 211, 0.6); */
 }
 .advice-card {
   display: grid;
   justify-items: center;
+  grid-template-columns: 0.5fr 1fr;
   border: 1px solid;
   border-radius: 10px;
   background-color: rgba(211, 211, 211, 0.5);
-  width: 100%;
+  /* width: 100%; */
+  height: 200px;
 }
 
 .advice-icon {
@@ -588,20 +605,19 @@ gap: 10px;
   justify-items: center;
   color: var(--highlight-clr);
   background-color: rgba(211, 211, 211, 0.1);
+  align-self: center;
 }
 
 .advice-container p {
-  /* background-color: transparent; */
+  display: grid;
   border: 0.5px solid;
   border-radius: 5px;
-  /* background-color: var(--background-document); */
   background-color: var(--secondary-clr);
   line-height: 1.2rem;
   box-shadow: 3px 5px var(--box-shadow);
+  align-items: center;
+  height: 100%;
 }
-
-
-
 
 /* ======================= ABOUT SECTION */
 
@@ -632,180 +648,213 @@ gap: 10px;
   text-transform: uppercase;
 }
 
+/* 
+=============================================
 
-@media screen and (min-width: 670px){
+            MEDIUM SCREEN
 
-.advice-container{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 300px);
-  justify-content: center;
-}
-}
+=============================================
+*/
 
+@media screen and (min-width: 768px) {
+  /* banner */
+  .banner-container h1{
+    font-size: 2rem;
+    height: 6rem;
+  }
+  
+  .advice-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(350px, 1fr));
+    grid-template-rows: repeat(2, minmax(350px, 1fr));
+    justify-content: center;
+  }
 
-
-@media screen and (min-width: 1170px){
-
-/* header */
-
-.nav{
-  height: 15vh;
-}
-
-.app-main-title{
-  font-size: 3rem;
-}
-
-
-/* navigation bar */
-
-.profile{
-  font-size: 1.2rem;
-  height: 8vh;
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-
-
-  /* home section */
-.home-section{
-  gap: 5rem;
-}
-
-
-/* banner */
-
-.banner-container h1 {
-  height: 15vh;
-  font-size: 2.5rem;
-  align-content: center;
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.profile-image-div {
-  align-items: center;
-}
-
-/* get started */
+  .advice-card {
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: 0.5fr 1fr;
+    height: 100%;
+    /* width: 100%; */
+  }
+  
 .get-started-container{
   display: flex;
-  height: 50vh;
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
+}
+.get-started-container article p{
+  font-size: 2rem;
 }
 
-.get-started-container article{
-  display: grid;
-  height: 100%;
-  background-color: transparent;
+  #shield{
+    display: grid;
+    background-color: transparent;
+    font-size: 7rem;
+    color: var(--highlight-clr);
+
+  }
 }
 
-#shield{
-  font-size: 20rem;
-  background-color: transparent;
-  color: var(--highlight-clr);
-  /* border: 2px solid grey; */
-  padding: 1rem;
-}
+/* 
+=============================================
 
-.get-started-btn{
-  height: 8rem;
- width: 15rem;
- font-size: 2rem;
-}
+            BIG SCREEN
 
-.get-started-container p {
-  font-size: 3rem;
-}
+=============================================
+*/
 
-.info-btn {
-  height: 6rem;
- width: 15rem;
- font-size: 2rem;
-}
+@media screen and (min-width: 1170px) {
+  /* header */
 
+  .nav {
+    height: 15vh;
+  }
 
+  .app-main-title {
+    font-size: 3rem;
+  }
+
+  /* navigation bar */
+
+  .navigation-bar {
+    border-bottom: 2px solid var(--highlight-clr);
+  }
+
+  .profile {
+    font-size: 1.2rem;
+    height: 8vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    border-bottom: none;
+  }
+
+  /* home section */
+  .home-section {
+    gap: 5rem;
+  }
+
+  /* banner */
+
+  .banner-container h1 {
+    height: 15vh;
+    font-size: 2.5rem;
+    align-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .profile-image-div {
+    align-items: center;
+  }
+
+  /* get started */
+  .get-started-container {
+    display: flex;
+    height: 50vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 4rem;
+  }
+
+  .get-started-container article{
+    display: grid;
+    align-items: center;
+  }
+
+  #shield {
+    font-size: 20rem;
+    padding: 1rem;
+  }
+
+  .get-started-btn {
+    height: 8rem;
+    width: 15rem;
+    font-size: 2rem;
+  }
+
+  .get-started-container p {
+    font-size: 3rem;
+  }
+
+  .info-btn {
+    height: 6rem;
+    width: 15rem;
+    font-size: 2rem;
+  }
 
   /* advice  */
 
-.advice-center{
-  display: grid;
-height: 100%;
-max-width: 1400px;
-margin: 0 auto;
-}
+  .advice-center {
+    display: grid;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 
-.advice-container{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 300px);
-  justify-content: center;
-  grid-template-areas: 
-  "a b b"
-  "a c d";
-  
-}
+  .advice-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-template-rows: repeat(2, minmax(400px, 1fr));
+    justify-content: center;
+    grid-template-areas:
+      "a b b"
+      "a c d";
+  }
 
-.advice-card{
-  padding: 2rem;
-  
-}
+  .advice-card {
+    padding: 2rem;
+    grid-template-columns: none;
+  }
 
-.advice-card-1{
-grid-area: c;
-}
-.advice-card-2{
-grid-area: b;
-}
-.advice-card-3{
-grid-area: a;
-}
-.advice-card-4{
-grid-area: d;
-}
+  .advice-card-1 {
+    grid-area: c;
+  }
+  .advice-card-2 {
+    grid-area: b;
+  }
+  .advice-card-3 {
+    grid-area: a;
+  }
+  .advice-card-4 {
+    grid-area: d;
+  }
 
-.advice-icon{
-  font-size: 5rem;
-  align-self: center;
+  .advice-icon {
+    font-size: 7rem;
+    align-self: center;
+  }
+
+  .advice-card p {
+    display: grid;
+    text-align: center;
+    /* width: 100%; */
+    align-items: center;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+
+  .advice-center h1 {
+    font-size: 3rem;
+  }
+
+  /* about */
+
+  .about-container h1 {
+    height: fit-content;
+    line-height: 2.2rem;
+  }
+
+  .about-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    height: fit-content;
+    padding: 5rem;
+  }
 }
-
-.advice-card p{
-  display: grid;
-  text-align: center;
-  align-items: center;
-  font-size: 1.1rem;
-  line-height: 1.5rem;
-}
-
-.advice-center h1 {
-  font-size: 3rem;
-}
-
-/* about */
-
-.about-container h1{
-  height: fit-content;
-  line-height: 2.2rem;
-}
-
-.about-container{
-  max-width: 1400px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-  line-height: 1.5rem;
-  height: fit-content;
-  padding: 5rem;
-}
-
-
-}
-
 
 /* 
 =============================================
