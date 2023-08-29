@@ -164,10 +164,6 @@ PASSWORD TESTER
   overflow: auto;
 }
 
-.show-section {
-  display: grid;
-}
-
 .input-subtitle {
   display: grid;
   justify-content: center;
@@ -199,7 +195,7 @@ PASSWORD TESTER
   padding-top: 2rem;
   /* justify-content: center; */
   align-items: center;
-  gap: 25px;
+  gap: 20px;
 }
 
 .input {
@@ -212,6 +208,7 @@ PASSWORD TESTER
   padding: 1rem;
   /* padding-top: 1rem; */
   font-size: 1rem;
+  border-radius: var(--border-radius);
 }
 
 .loading-container {
@@ -943,20 +940,25 @@ HOME SECTION
 
   .input {
     width: 50%;
+    height: 5rem;
+    font-size: 1.5rem;
   }
 
   .copy-to-clipboard-btn {
     /* display: flex; */
     height: 4rem;
   }
+  .password-generator-container {
+    /* height: calc(100vh - 193px - 141px); */
+    height: fit-content;
+    padding-bottom: 200px;
+  }
+
+
 }
 
 /* generator */
 
-.password-generator-container {
-  /* height: calc(100vh - 193px - 141px); */
-  height: fit-content;
-}
 
 /* 
 =============================================
