@@ -13,6 +13,36 @@
   --secondary-clr: #c7f0d3;
   --highlight-clr: #31b95a;
   --box-shadow: rgba(49, 185, 90, 0.5);
+
+  /* white to light green */
+  --green--light-shade-100: #ffffff;
+  --green--light-shade-90: #eaf8ef;
+  --green--light-shade-80: #d6f1de;
+  --green--light-shade-70: #c1eace;
+  --green--light-shade-60: #ade3bd;
+  --green--light-shade-50: #98dcad;
+  --green--light-shade-40: #83d59c;
+  --green--light-shade-30: #6fce8c;
+  --green--light-shade-20: #5ac77b;
+  --green--light-shade-10: #46c06b;
+
+  /* light to dark green */
+  --green--dark-shade-0: #46c06b;
+  --green--dark-shade-10: #2ca751;
+  --green--dark-shade-20: #279448;
+  --green--dark-shade-30: #22823f;
+  --green--dark-shade-40: #1d6f36;
+  --green--dark-shade-50: #195d2d;
+  --green--dark-shade-60: #144a24;
+  --green--dark-shade-70: #0f381b;
+  --green--dark-shade-80: #0a2512;
+  --green--dark-shade-90: #051209;
+  --green--dark-shade-100: #000000;
+
+  /* other variables */
+  --gap: 2rem;
+  --border-radius: 15px;
+  --max-width: 1400px;
 }
 
 /* 
@@ -22,6 +52,10 @@ HEADER
 
 =============================================
 */
+
+.navigation-section {
+  display: grid;
+}
 
 .tall-guy-presents,
 .app-main-title {
@@ -62,6 +96,7 @@ NAVIGATION CENTER
 .navigation-bar {
   display: grid;
   width: 100%;
+  height: 50px;
 }
 
 .profile {
@@ -91,10 +126,10 @@ NAVIGATION CENTER
   align-items: center;
 }
 
-.show-nav {
+/* .show-nav {
   width: 100%;
   transition: 500ms;
-}
+} */
 
 .navlinks li {
   display: flex;
@@ -107,7 +142,7 @@ NAVIGATION CENTER
 }
 
 .nav-link:hover {
-  color: var(--highlight-clr);
+  color: var(--green--dark-shade-10);
   transition: 300ms;
 }
 
@@ -153,17 +188,18 @@ PASSWORD TESTER
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 20px 20px 20px 20px;
+  padding: 20px;
   width: 100%;
   gap: 10px;
 }
 
 .password-input-container {
   display: grid;
-  grid-template-rows: 2fr auto 0.5fr auto 1.6fr;
-  justify-content: center;
+  grid-template-rows: 1fr 0.5fr auto 1.6fr;
+  padding-top: 2rem;
+  /* justify-content: center; */
   align-items: center;
-  gap: 15px;
+  gap: 25px;
 }
 
 .input {
@@ -174,6 +210,7 @@ PASSWORD TESTER
   height: 50px;
   background-color: var(--background-document);
   padding: 1rem;
+  /* padding-top: 1rem; */
   font-size: 1rem;
 }
 
@@ -220,15 +257,6 @@ PASSWORD TESTER
   display: flex;
   gap: 4px;
   align-items: center;
-}
-
-.copy-to-clipboard-btn:hover {
-  border: 2px solid #04aa47;
-  cursor: pointer;
-}
-
-.show {
-  display: grid;
 }
 
 /* =================strength status bar */
@@ -316,7 +344,7 @@ PASSWORD TESTER
 }
 
 .show {
-  display: grid;
+  display: flex;
 }
 
 .green {
@@ -425,9 +453,9 @@ PASSWORD GENERATOR
   color: var(--background-document);
 }
 .password-generator-btn:hover {
-  background-color: var(--primary-clr);
+  background-color: var(--green--dark-shade-20);
   transition: 500ms;
-  color: black;
+  /* color: black; */
 }
 
 .generated-password {
@@ -483,7 +511,7 @@ HOME SECTION
 .home-section {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 20px;
   padding-bottom: 3rem;
   gap: 2rem;
 }
@@ -505,7 +533,7 @@ HOME SECTION
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  padding: 1rem;
+  padding: 20px;
   text-align: center;
   border-radius: 10px;
   background-color: var(--highlight-clr);
@@ -553,10 +581,13 @@ HOME SECTION
   color: white;
 }
 
-.get-started-btn:hover,
+.get-started-btn:hover {
+  background-color: var(--green--dark-shade-20);
+  transition: 500ms;
+}
+
 .info-btn:hover {
-  background-color: var(--primary-clr);
-  color: black;
+  background-color: var(--green--light-shade-60);
   transition: 500ms;
 }
 
@@ -566,13 +597,12 @@ HOME SECTION
 
 /* ========================== advice */
 
-
-.advice-center{
-   /* display: flex; */
+.advice-center {
+  /* display: flex; */
   /* flex-direction: column; */
 }
 .advice-container {
-   display: flex;
+  display: flex;
   flex-direction: column;
   gap: 1rem;
 }
@@ -584,8 +614,8 @@ HOME SECTION
 }
 
 .advice-center {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -674,21 +704,7 @@ flex-direction: column;
     height: 6rem;
   }
 
-  .advice-container {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(350px, 1fr));
-    grid-template-rows: repeat(2, minmax(350px, 1fr));
-    justify-content: center;
-  }
-
-  .advice-card {
-    display: grid;
-    grid-template-columns: none;
-    grid-template-rows: 0.5fr 1fr;
-    height: 100%;
-    /* width: 100%; */
-  }
-
+  /* get started */
   .get-started-container {
     display: flex;
   }
@@ -701,6 +717,40 @@ flex-direction: column;
     background-color: transparent;
     font-size: 7rem;
     color: var(--highlight-clr);
+  }
+
+  /* advice */
+  .advice-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(350px, 1fr));
+    grid-template-rows: repeat(2, minmax(250px, 1fr));
+    justify-content: center;
+  }
+
+  .advice-card {
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: 0.5fr 1fr;
+    height: 100%;
+  }
+
+  .advice-card p {
+    height: 100%;
+  }
+
+  /* input password */
+
+  .password-input-center * {
+    font-size: 1rem;
+  }
+
+  .input {
+    width: 50%;
+    min-width: 520px;
+  }
+
+  .input-subtitle {
+    font-size: 1.8rem;
   }
 }
 
@@ -715,19 +765,27 @@ flex-direction: column;
 @media screen and (min-width: 1170px) {
   /* header */
 
+  .navigation-section {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--highlight-clr);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+  }
+
   .nav {
     height: 15vh;
+    border: none;
+    width: 45rem;
   }
 
   .app-main-title {
     font-size: 3rem;
+    border: none;
   }
 
   /* navigation bar */
-
-  .navigation-bar {
-    border-bottom: 2px solid var(--highlight-clr);
-  }
 
   .profile {
     font-size: 1.2rem;
@@ -815,7 +873,7 @@ flex-direction: column;
   }
 
   .advice-card {
-    padding: 2rem;
+    /* padding: 3.5rem; */
     grid-template-columns: none;
   }
 
@@ -860,11 +918,44 @@ flex-direction: column;
   .about-container {
     max-width: 1400px;
     margin: 0 auto;
+    width: 100%;
     font-size: 1.1rem;
     line-height: 1.5rem;
     height: fit-content;
     padding: 5rem;
   }
+
+  /* password tester */
+
+  .password-input-center * {
+    font-size: 1.2rem;
+  }
+
+  .strength-container * {
+    font-size: 1.2rem;
+  }
+
+  .input-subtitle {
+    height: 15vh;
+    font-size: 2.5rem;
+    max-width: var(--max-width);
+  }
+
+  .input {
+    width: 50%;
+  }
+
+  .copy-to-clipboard-btn {
+    /* display: flex; */
+    height: 4rem;
+  }
+}
+
+/* generator */
+
+.password-generator-container {
+  /* height: calc(100vh - 193px - 141px); */
+  height: fit-content;
 }
 
 /* 
@@ -893,6 +984,7 @@ FOOTER SECTION
   /* color: var(--highlight-clr); */
   font-size: 1.5rem;
   padding-bottom: 1rem;
+  color: var(--green--dark-shade-30);
 }
 
 .footer-links-container {
@@ -914,7 +1006,8 @@ FOOTER SECTION
 }
 
 .footer-links-container a:hover {
-  color: var(--highlight-clr);
+  color: var(--green--dark-shade-20);
+  transition: 300ms;
 }
 
 .copyright {

@@ -531,12 +531,12 @@ NAVBAR BUTTON
 =============================================
 */
 
-const navBtn = document.querySelector(".profile-img");
-const navLinks = document.querySelector(".navlinks");
+// const navBtn = document.querySelector(".profile-img");
+// const navLinks = document.querySelector(".navlinks");
 
-navBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("show-nav");
-});
+// navBtn.addEventListener("click", () => {
+//   navLinks.classList.toggle("show-nav");
+// });
 
 // ==================================================
 
