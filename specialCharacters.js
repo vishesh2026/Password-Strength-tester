@@ -30,7 +30,6 @@ export const specialCharacters = [
   "/",
   "?",
 ];
-
 export const alphabetLowercase = [
   "a",
   "b",
@@ -88,5 +87,4 @@ export const alphabetUppercase = [
   "Y",
   "Z",
 ];
-
 export const numbersArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
