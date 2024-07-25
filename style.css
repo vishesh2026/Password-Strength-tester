@@ -4,40 +4,15 @@
   box-sizing: border-box;
   color: var(--text-clr);
   background-color: var(--background-document);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", Arial, sans-serif;
 }
 
 :root {
   --background-document: #f5faeb;
-  --primary-clr: #b3e7a6;
+  --primary-clr: #43e9e1;
   --secondary-clr: #c7f0d3;
-  --highlight-clr: #31b95a;
-  --box-shadow: rgba(49, 185, 90, 0.5);
-
-  /* white to light green */
-  --green--light-shade-100: #ffffff;
-  --green--light-shade-90: #eaf8ef;
-  --green--light-shade-80: #d6f1de;
-  --green--light-shade-70: #c1eace;
-  --green--light-shade-60: #ade3bd;
-  --green--light-shade-50: #98dcad;
-  --green--light-shade-40: #83d59c;
-  --green--light-shade-30: #6fce8c;
-  --green--light-shade-20: #5ac77b;
-  --green--light-shade-10: #46c06b;
-
-  /* light to dark green */
-  --green--dark-shade-0: #46c06b;
-  --green--dark-shade-10: #2ca751;
-  --green--dark-shade-20: #279448;
-  --green--dark-shade-30: #22823f;
-  --green--dark-shade-40: #1d6f36;
-  --green--dark-shade-50: #195d2d;
-  --green--dark-shade-60: #144a24;
-  --green--dark-shade-70: #0f381b;
-  --green--dark-shade-80: #0a2512;
-  --green--dark-shade-90: #051209;
-  --green--dark-shade-100: #000000;
+  --highlight-clr: #2ec2f3;
+  --box-shadow: rgba(49, 185, 174, 0.5);
 
   /* other variables */
   --gap: 2rem;
@@ -45,31 +20,18 @@
   --max-width: 1400px;
 }
 
-/* 
-=============================================
-
-HEADER
-
-=============================================
-*/
+/* -----------------HEADER ------------------*/
 
 .navigation-section {
   display: grid;
 }
 
-.tall-guy-presents,
+.bold,
 .app-main-title {
   background-color: transparent;
   display: grid;
   font-size: 35px;
-  color: var(--highlight-clr);
-}
-
-.tall-guy-presents {
   color: black;
-  justify-content: center;
-  align-items: end;
-  font-size: 15px;
 }
 
 .nav {
@@ -82,16 +44,10 @@ HEADER
   height: 100px;
   width: 100%;
   padding-top: 5px;
-  border-bottom: 2px solid var(--highlight-clr);
+  border-bottom: 2px solid black;
 }
 
-/* 
-=============================================
-
-NAVIGATION CENTER
-
-=============================================
-*/
+/* ------------------NAVIGATION CENTER-------------- */
 
 .navigation-bar {
   display: grid;
@@ -102,12 +58,11 @@ NAVIGATION CENTER
 .profile {
   display: flex;
   padding: 0rem 1rem 0rem 1rem;
-  border-bottom: 2px solid var(--highlight-clr);
+  border-bottom: 2px solid black;
 }
 
 .profile-image-div {
   display: grid;
-  /* width: 100%; */
   padding: 5px;
 }
 
@@ -126,11 +81,6 @@ NAVIGATION CENTER
   align-items: center;
 }
 
-/* .show-nav {
-  width: 100%;
-  transition: 500ms;
-} */
-
 .navlinks li {
   display: flex;
   list-style: none;
@@ -142,21 +92,15 @@ NAVIGATION CENTER
 }
 
 .nav-link:hover {
-  color: var(--green--dark-shade-10);
+  color: skyblue;
   transition: 300ms;
 }
 
 #home {
-  color: var(--highlight-clr);
+  color: skyblue;
 }
 
-/* 
-=============================================
-
-PASSWORD TESTER
-
-=============================================
-*/
+/* ------------------PASSWORD TESTER---------------------- */
 
 .password-section {
   display: none;
@@ -176,10 +120,10 @@ PASSWORD TESTER
   color: white;
   padding: 20px;
   text-align: center;
-  background-color: var(--highlight-clr);
+  background-color: pink;
 }
 
-/* ================================== password input container */
+/* -------------------------- password input container------------ */
 .password-input-center {
   display: flex;
   flex-direction: column;
@@ -220,7 +164,7 @@ PASSWORD TESTER
   width: 24px;
   height: 24px;
   border: 5px solid rgba(0, 0, 0, 0.1);
-  border-top: 5px solid var(--highlight-clr);
+  border-top: 5px solid black;
   border-radius: 50%;
   animation: spin 2s linear infinite;
   margin: 0 auto 10px;
@@ -256,7 +200,7 @@ PASSWORD TESTER
   align-items: center;
 }
 
-/* =================strength status bar */
+/* -------------------strength status bar -----------------*/
 
 .strength-container {
   display: grid;
@@ -264,7 +208,7 @@ PASSWORD TESTER
   justify-content: center;
   align-items: center;
   align-self: center;
-  background-color: var(--secondary-clr);
+  background-color: pink;
   width: 100%;
 }
 
@@ -274,7 +218,7 @@ PASSWORD TESTER
   align-self: end;
   padding-bottom: 0;
   font-size: 18px;
-  background-color: var(--secondary-clr);
+  background-color: pink;
 }
 .status-bar {
   background-color: var(--secn-btn-clr);
@@ -303,7 +247,6 @@ PASSWORD TESTER
   font-size: 0.9rem;
   justify-self: center;
   align-self: center;
-  /* line-height: 5px; */
   gap: 5px;
 }
 
@@ -328,7 +271,7 @@ PASSWORD TESTER
 }
 
 .copy-to-clipboard-btn:hover {
-  border: 2px solid #04aa47;
+  border: 2px solid pink;
   cursor: pointer;
 }
 
@@ -337,7 +280,7 @@ PASSWORD TESTER
 .strength-status {
   display: grid;
   justify-content: center;
-  background-color: var(--secondary-clr);
+  background-color: pink;
 }
 
 .show {
@@ -421,7 +364,7 @@ PASSWORD GENERATOR
   /* text-decoration: underline; */
   padding: 20px;
   text-align: center;
-  background-color: var(--highlight-clr);
+  background-color: rgb(247, 183, 66);
 }
 
 .highlight {
@@ -444,13 +387,13 @@ PASSWORD GENERATOR
   width: 6rem;
   height: 3rem;
   justify-self: center;
-  background-color: var(--highlight-clr);
+  background-color: rgb(247, 183, 66);
   font-size: 18px;
   border-radius: 10px;
   color: var(--background-document);
 }
 .password-generator-btn:hover {
-  background-color: var(--green--dark-shade-20);
+  background-color: rgb(226, 143, 102);
   transition: 500ms;
   /* color: black; */
 }
@@ -479,7 +422,7 @@ PASSWORD GENERATOR
 }
 
 .copy-to-clipboard-btn-2:hover {
-  border: 2px solid #04aa47;
+  border: 2px solid orange;
   cursor: pointer;
 }
 
@@ -544,8 +487,8 @@ HOME SECTION
   gap: 1rem;
   align-items: center;
   justify-content: center;
-  background-color: var(--secondary-clr);
-  padding: 20px 0px 20px 0px;
+  background-color: rgb(157, 215, 238);
+  padding: 0px 0px 0px 0px;
   border-radius: 10px;
 }
 
@@ -558,7 +501,7 @@ HOME SECTION
 
 .get-started-container p {
   display: grid;
-  background-color: var(--secondary-clr);
+  background-color: rgb(157, 215, 238);
   font-size: 1.2rem;
   /* height: 100%; */
   align-items: center;
@@ -574,12 +517,12 @@ HOME SECTION
   border-radius: 10px;
 }
 .get-started-btn {
-  background-color: var(--highlight-clr);
+  background-color: rgb(157, 215, 238);
   color: white;
 }
 
 .get-started-btn:hover {
-  background-color: var(--green--dark-shade-20);
+  background-color: rgb(157, 215, 238);
   transition: 500ms;
 }
 
@@ -594,10 +537,6 @@ HOME SECTION
 
 /* ========================== advice */
 
-.advice-center {
-  /* display: flex; */
-  /* flex-direction: column; */
-}
 .advice-container {
   display: flex;
   flex-direction: column;
@@ -639,7 +578,7 @@ HOME SECTION
   display: grid;
   font-size: 2rem;
   justify-items: center;
-  color: var(--highlight-clr);
+  color: rgb(157, 215, 238);
   background-color: rgba(211, 211, 211, 0.1);
   align-self: center;
 }
@@ -648,7 +587,7 @@ HOME SECTION
   display: grid;
   border: 0.5px solid;
   border-radius: 5px;
-  background-color: var(--secondary-clr);
+  background-color: rgb(157, 215, 238);
   line-height: 1.2rem;
   box-shadow: 3px 5px var(--box-shadow);
   align-items: center;
@@ -668,7 +607,7 @@ HOME SECTION
 }
 .about-container,
 .about-container * {
-  background-color: var(--secondary-clr);
+  background-color: rgb(157, 215, 238);
 }
 
 .about-container h1 {
@@ -682,7 +621,7 @@ HOME SECTION
 }
 
 .about-container span {
-  color: var(--highlight-clr);
+  color: rgb(18, 175, 238);
   text-transform: uppercase;
 }
 
@@ -713,7 +652,7 @@ HOME SECTION
     display: grid;
     background-color: transparent;
     font-size: 7rem;
-    color: var(--highlight-clr);
+    color: skyblue;
   }
 
   /* advice */
@@ -765,7 +704,7 @@ HOME SECTION
   .navigation-section {
     display: flex;
     align-items: center;
-    border-bottom: 2px solid var(--highlight-clr);
+    border-bottom: 2px solid pink;
     max-width: var(--max-width);
     margin: 0 auto;
     width: 100%;
@@ -778,7 +717,7 @@ HOME SECTION
   }
 
   .app-main-title {
-    font-size: 3rem;
+    font-size: 2.4rem;
     border: none;
   }
 
@@ -953,12 +892,9 @@ HOME SECTION
     height: fit-content;
     padding-bottom: 200px;
   }
-
-
 }
 
 /* generator */
-
 
 /* 
 =============================================
@@ -978,7 +914,7 @@ FOOTER SECTION
 
 .footer-center,
 .footer-center * {
-  background-color: rgb(202, 201, 201);
+  background-color: rgb(195, 167, 246);
 }
 
 .footer-center h1 {
@@ -986,7 +922,7 @@ FOOTER SECTION
   /* color: var(--highlight-clr); */
   font-size: 1.5rem;
   padding-bottom: 1rem;
-  color: var(--green--dark-shade-30);
+  color: black;
 }
 
 .footer-links-container {
@@ -1008,7 +944,7 @@ FOOTER SECTION
 }
 
 .footer-links-container a:hover {
-  color: var(--green--dark-shade-20);
+  color: cornflowerblue;
   transition: 300ms;
 }
 

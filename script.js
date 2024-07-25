@@ -14,13 +14,9 @@ const strengthStatus = document.querySelector(".strength-status");
 const copyBtn = document.querySelector(".copy-to-clipboard-btn");
 const messageItem = document.querySelector(".message-item");
 
-// ========================================
+// ===============  PASSWORD STRENGTH TESTER MAIN EVENT
 
-// PASSWORD STRENGTH TESTER MAIN EVENT
-
-// ========================================
-
-// submitBtn.addEventListener("click", validation);
+//------------- submitBtn.addEventListener("click", validation);--------
 input.addEventListener("input", () => {
   setTimeout(() => {
     function validation(password) {
@@ -42,13 +38,8 @@ input.addEventListener("input", () => {
   showLoading();
 });
 
-/* 
-=============================================
+// ============   LOADING ICON   ================
 
-LOADING ICON
-
-=============================================
-*/
 const loadingContainer = document.querySelector(".loading-container");
 
 function showLoading() {
@@ -59,11 +50,7 @@ function hideLoading() {
   loadingContainer.style.display = "none";
 }
 
-// ========================================
-
-// CONDITION STATEMENT FUNCTIONS
-
-// ========================================
+// ============ CONDITION STATEMENT FUNCTIONS ==========
 
 function noPassword(password) {
   if (password.trim().length === 0) {
@@ -141,11 +128,7 @@ function containsNumbers(password) {
   }
 }
 
-// ========================================
-
 // COLOUR STRENGTH STATUS CONTIONAL STATMENT FUNCTIONS
-
-// ========================================
 
 // strong password
 function strongPassword(password) {
@@ -194,21 +177,6 @@ function moderatePassword(password) {
     strengthStatusBar3.classList.remove("green");
     return true;
   }
-  // else if (
-  //   !characterLength(password) &&
-  //   ((containsSpecialCharacters(password) && containsCapitalLetter(password)) ||
-  //     containsNumbers(password))
-  // ) {
-  //   console.log("moderate2");
-  //   strengthStatus.textContent = "Password is moderate";
-  //   strengthStatusBar1.classList.remove("red");
-  //   strengthStatusBar1.classList.add("orange");
-  //   strengthStatusBar2.classList.add("orange");
-  //   strengthStatusBar1.classList.remove("green");
-  //   strengthStatusBar2.classList.remove("green");
-  //   strengthStatusBar3.classList.remove("green");
-  //   return true;
-  // }
   if (
     characterLength(password) &&
     ((containsSpecialCharacters(password) &&
@@ -419,13 +387,7 @@ function weakPassword(password) {
   }
 }
 
-/* 
-=============================================
-
-COPY BUTTON
-
-=============================================
-*/
+// ----------COPY BUTTON---------------//
 
 copyBtn.addEventListener("click", () => {
   try {
@@ -435,18 +397,10 @@ copyBtn.addEventListener("click", () => {
     copyBtn.style.color = "#04aa47";
     copyBtn.style.border = "2px solid #04aa47";
     // console.log("copied");
-  } catch (error) {
-    // console.log("unable to copy!");
-  }
+  } catch (error) {}
 });
 
-/* 
-=============================================
-
-PASSWORD GENERATOR
-
-=============================================
-*/
+// ============== PASSWORD GENERATOR=============
 
 const generateBtn = document.querySelector(".password-generator-btn");
 const generatedPasswordDiv = document.querySelector(".generated-password");
@@ -495,13 +449,7 @@ generateBtn.addEventListener("click", () => {
   generatedPasswordDiv.textContent = `${randomNumbersCharacter1}${randomLowLetterCharacter1}${randomSpecialCharacter1}${randomUpLetterCharacter1}${randomNumbersCharacter2}${randomSpecialCharacter2}${randomLowLetterCharacter2}${randomUpLetterCharacter2}`;
 });
 
-/* 
-=============================================
-
-COPY BUTTON
-
-=============================================
-*/
+// ==================  COPY BUTTON =======================
 
 const copyGenBtn = document.querySelector(".copy-to-clipboard-btn-2");
 
@@ -523,28 +471,12 @@ copyGenBtn.addEventListener("click", () => {
   }
 });
 
-/* 
-=============================================
+// ----------------------  NAVBAR BUTTON  ---------------
 
-NAVBAR BUTTON
+// --------------------  SHOW SECTION  ---------------
 
-=============================================
-*/
+//--------------------- sections --------------------
 
-// const navBtn = document.querySelector(".profile-img");
-// const navLinks = document.querySelector(".navlinks");
-
-// navBtn.addEventListener("click", () => {
-//   navLinks.classList.toggle("show-nav");
-// });
-
-// ==================================================
-
-// SHOW SECTION
-
-// ==================================================
-
-// sections
 const passwordSection = document.querySelector(".password-section");
 const profileSection = document.querySelector(".home-section");
 const generatorSection = document.querySelector(
@@ -583,7 +515,6 @@ getStartedBtn.addEventListener("click", () => {
   profileSection.classList.add("hide-section");
 });
 aboutBtn.addEventListener("click", () => {
-  //  + window.pageOffset is die current vertical scroll position on the page that you'd want to take into account
   const aboutHeight =
     aboutSection.getBoundingClientRect().top + window.pageYOffset - 10;
   window.scrollTo({ top: aboutHeight, behavior: "smooth" });
@@ -595,13 +526,7 @@ input.addEventListener("click", () => {
   window.scrollTo({ top: inputHeight, behavior: "smooth" });
 });
 
-/* 
-=============================================
-
-CHANGE COLOUR OF TABS
-
-=============================================
-*/
+// ======================CHANGE COLOUR OF TABS=============
 
 const navLinkElements = document.querySelectorAll(".nav-link");
 
@@ -616,11 +541,7 @@ navLinkElements.forEach((link) => {
 
 console.log(navLinkElements);
 
-// ==================================================
-
-// FOOTER COPYRIGHT DATE
-
-// ==================================================
+// =========  FOOTER COPYRIGHT ============
 
 const date = document.getElementById("date");
 
